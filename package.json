@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "serve",
-    "build": "esbuild './src/**/*' --bundle --sourcemap --minify --outdir=dist "
+    "build": "esbuild './src/**/*' --bundle --minify --outdir=dist "
   },
   "author": "Maksym Chechel",
   "license": "ISC",
