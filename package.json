@@ -1,0 +1,20 @@
+{
+  "name": "bitgtp-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serve",
+    "build": "esbuild './src/**/*' --bundle --sourcemap --minify --outdir=dist --watch"
+  },
+  "author": "Maksym Chechel",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "npm:@gsap/shockingly@^3.12.5",
+    "splitting": "^1.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5",
+    "serve": "^14.1.1"
+  }
+}
