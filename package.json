@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "serve",
-    "build": "esbuild './src/**/*' --bundle --sourcemap --minify --outdir=dist --watch"
+    "build": "esbuild './src/**/*' --bundle --sourcemap --minify --outdir=dist "
   },
   "author": "Maksym Chechel",
   "license": "ISC",
   "dependencies": {
     "gsap": "npm:@gsap/shockingly@^3.12.5",
-    "splitting": "^1.1.0"
+    "split-type": "^0.3.4"
   },
   "devDependencies": {
     "esbuild": "^0.21.5",

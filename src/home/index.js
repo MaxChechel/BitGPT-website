@@ -2,16 +2,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { DrawSVGPlugin } from "gsap/all";
 
-import circuitBoardAnimation from "./home-animations/circuitBoardAnimation";
-import chatAnimation from "./components/chatAnimation";
-import agentAnimation from "./components/agentAnimation";
-import llmAnimation from "./components/llmAnimation";
-import pulseAnimation from "./components/pulseAnimation";
-import fraudAnimation from "./components/fraudAnimation";
-import computeAnimation from "./components/computeAnimation";
-import contributeAnimation from "./components/contributeAnimation";
-import vectorStorageAnimation from "./components/vectorStorageAnimations";
-import evaluateAnimation from "./components/evaluateAnimation";
+import circuitBoardAnimation from "../home-animations/circuitBoardAnimation";
+import chatAnimation from "../home-animations/chatAnimation";
+import agentAnimation from "../home-animations/agentAnimation";
+import llmAnimation from "../home-animations/llmAnimation";
+import pulseAnimation from "../home-animations/pulseAnimation";
+import fraudAnimation from "../home-animations/fraudAnimation";
+import computeAnimation from "../home-animations/computeAnimation";
+import contributeAnimation from "../home-animations/contributeAnimation";
+import vectorStorageAnimation from "../home-animations/vectorStorageAnimations";
+import evaluateAnimation from "../home-animations/evaluateAnimation";
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
 //  Circuit animation for hero section
