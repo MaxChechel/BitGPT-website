@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "serve",
-    "build": "esbuild './src/**/*' --bundle --minify --outdir=dist "
+    "dev": "esbuild './src/**/*' --bundle --minify --outdir=dist --watch",
+    "build": "esbuild './src/**/*' --bundle --minify --outdir=dist"
   },
   "author": "Maksym Chechel",
   "license": "ISC",
