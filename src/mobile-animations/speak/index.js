@@ -37,7 +37,7 @@ export default function speakAnimation() {
     })
     .to(
       ".speak-animation .mobile_waves-wrap",
-      { x: "0%", duration: totalDuration, ease: "none" },
+      { x: "50%", duration: totalDuration, ease: "none" },
       0
     )
     .to(
