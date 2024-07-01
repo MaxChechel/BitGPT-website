@@ -28,5 +28,13 @@ export default function privacyAnimation() {
       repeat: -1,
       yoyo: true,
       ease: "power2.inOut",
+    })
+    .to(".privacy_indicator-item", {
+      opacity: 1,
+      duration: 0.5,
+      repeat: -1,
+      repeatDelay: 2,
+      yoyo: true,
+      ease: "circ.out",
     });
 }

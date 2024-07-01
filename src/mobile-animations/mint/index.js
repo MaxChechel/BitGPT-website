@@ -34,7 +34,7 @@ export default function mintAnimation() {
       "<50%"
     )
     .to(".mint_image-wrapper", {
-      width: "70%",
+      width: "80%",
       duration: 0.6,
       ease: "power2.out",
     })

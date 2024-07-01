@@ -8,6 +8,7 @@ import privacyAnimation from "../mobile-animations/privacy";
 import automateAnimation from "../mobile-animations/automate";
 import speakAnimation from "../mobile-animations/speak";
 import circuitBoardAnimation from "../home-animations/circuitBoardAnimation";
+import tradeAnimation from "../mobile-animations/trade";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 //  Circuit animation for hero section
@@ -159,3 +160,4 @@ mintAnimation();
 privacyAnimation();
 automateAnimation();
 speakAnimation();
+tradeAnimation();
