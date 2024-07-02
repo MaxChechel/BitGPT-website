@@ -5,9 +5,10 @@ export default function speakAnimation() {
     ".speak-animation .mobile_waves svg rect"
   );
   const svgRectQuantity = waveLines.length;
-  const totalDuration = svgRectQuantity / 15;
+  const totalDuration = svgRectQuantity / 20;
 
-  const tl = gsap.timeline({});
+  const mainTl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+  const tl = gsap.timeline();
   tl.to(".speak-animation .mic_svg", {
     "--background-color--mic-svg-1": "#0A5CFF",
     "--background-color--mic-svg-2": "#063799",
@@ -15,6 +16,7 @@ export default function speakAnimation() {
     .add(() => {
       const tl = gsap.timeline({ repeat: 3 });
       tl.to(".speak-animation .mic_overlay", {
+        opacity: 1,
         scale: 1.5,
         duration: 0.4,
       })
@@ -33,6 +35,10 @@ export default function speakAnimation() {
         .to(".speak-animation .mic_overlay", {
           scale: 1.4,
           duration: 0.3,
+        })
+        .to(".speak-animation .mic_overlay", {
+          scale: 0.9,
+          duration: 0.1,
         });
     })
     .to(
@@ -63,7 +69,7 @@ export default function speakAnimation() {
     )
     .add(() => {
       waveLines.forEach((waveLine, index) => {
-        const multiplier = index * (svgRectQuantity * 0.00093);
+        const multiplier = index * (svgRectQuantity * 0.0009);
         const tl = gsap.timeline();
         tl.to(waveLine, {
           fill: "#fff",
@@ -87,6 +93,7 @@ export default function speakAnimation() {
       opacity: 1,
     })
     .to(".speak-animation .mobile-chat_msg-wrap", {
+      "grid-template-rows": "1fr",
       delay: 0.2,
       opacity: 1,
     })
@@ -113,5 +120,18 @@ export default function speakAnimation() {
         height: "auto",
       },
       "<0%"
-    );
+    )
+    .to(".mobile_chat-wrap.is-speak", {
+      delay: 1,
+      opacity: 0,
+    });
+  const initialStylesTl = gsap.timeline();
+
+  initialStylesTl.to(".trade-animation .mic_svg", {
+    "--background-color--mic-svg-1": "#292929",
+    "--background-color--mic-svg-2": "#1f1f1f",
+    duration: 0,
+  });
+
+  mainTl.add(tl).add(initialStylesTl);
 }
