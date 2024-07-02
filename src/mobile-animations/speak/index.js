@@ -7,9 +7,10 @@ export default function speakAnimation() {
   const svgRectQuantity = waveLines.length;
   const totalDuration = svgRectQuantity / 20;
 
-  const mainTl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+  const mainTl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
   const tl = gsap.timeline();
   tl.to(".speak-animation .mic_svg", {
+    delay: 0.5,
     "--background-color--mic-svg-1": "#0A5CFF",
     "--background-color--mic-svg-2": "#063799",
   })
@@ -40,11 +41,11 @@ export default function speakAnimation() {
           scale: 0.9,
           duration: 0.1,
         });
-    })
+    }, 0.5)
     .to(
       ".speak-animation .mobile_waves-wrap",
       { x: "50%", duration: totalDuration, ease: "none" },
-      0
+      1
     )
     .to(
       ".speak-animation .mobile_waves",
@@ -56,7 +57,7 @@ export default function speakAnimation() {
           gsap.to(".speak-animation .mic_overlay", { opacity: 0 });
         },
       },
-      0
+      1
     )
     .to(
       ".speak-animation .mobile_waves svg g",
@@ -65,7 +66,7 @@ export default function speakAnimation() {
         ease: "none",
         stagger: { each: `${totalDuration / svgRectQuantity}` },
       },
-      0
+      0.5
     )
     .add(() => {
       waveLines.forEach((waveLine, index) => {
@@ -80,8 +81,9 @@ export default function speakAnimation() {
           duration: totalDuration / svgRectQuantity / 2,
         });
       });
-    }, 0)
+    }, 0.5)
     .to(".speak_sound-wrap", {
+      delay: 0.8,
       opacity: 0,
       duration: 0.5,
     })
@@ -124,14 +126,20 @@ export default function speakAnimation() {
     .to(".mobile_chat-wrap.is-speak", {
       delay: 1,
       opacity: 0,
+    })
+    .to(".speak-animation .mic_svg", {
+      "--background-color--mic-svg-1": "#292929",
+      "--background-color--mic-svg-2": "#1f1f1f",
+      duration: 0,
+    })
+    .set(".speak-animation .mobile_waves-wrap", { x: "-50%" })
+    .set(".speak-animation .mobile_waves", {
+      x: "100%",
+    })
+    .to(".speak_sound-wrap", {
+      opacity: 1,
+      duration: 0.5,
     });
-  const initialStylesTl = gsap.timeline();
 
-  initialStylesTl.to(".trade-animation .mic_svg", {
-    "--background-color--mic-svg-1": "#292929",
-    "--background-color--mic-svg-2": "#1f1f1f",
-    duration: 0,
-  });
-
-  mainTl.add(tl).add(initialStylesTl);
+  mainTl.add(tl);
 }

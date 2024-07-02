@@ -1,25 +1,27 @@
 import gsap from "gsap";
 
 export default function mintAnimation() {
+  const mainTl = gsap.timeline({ repeat: -1 });
   const circles = document.querySelectorAll(".mint_image-load-dots circle");
-
-  circles.forEach((circle, index) => {
-    const tl = gsap.timeline({ repeat: 5, repeatDelay: 0.2 });
-    tl.to(circle, {
-      opacity: 0.5,
-      delay: gsap.utils.random(0, 0.2, 0.02),
-      duration: gsap.utils.random(0, 0.3, 0.05),
-      stagger: { each: 0.01, from: "random" },
-    }).to(circle, {
-      opacity: 0,
-      delay: gsap.utils.random(0, 0.2, 0.02),
-      duration: 0.1,
-      stagger: { each: 0.01, from: "random" },
+  const circlesTl = gsap.timeline();
+  circlesTl.add(() => {
+    circles.forEach((circle, index) => {
+      const tl = gsap.timeline({ repeat: 5 });
+      tl.to(circle, {
+        opacity: 0.5,
+        delay: gsap.utils.random(0, 0.1, 0.02),
+        duration: gsap.utils.random(0, 0.2, 0.05),
+        stagger: { each: 0.005, from: "random" },
+      }).to(circle, {
+        opacity: 0,
+        delay: gsap.utils.random(0, 0.2, 0.02),
+        duration: 0.1,
+        stagger: { each: 0.01, from: "random" },
+      });
     });
-  });
-
-  const mainTl = gsap.timeline();
-  mainTl
+  }, 1);
+  const mintTl = gsap.timeline();
+  mintTl
     .to(".mint_image", {
       opacity: 1,
       duration: 3,
@@ -103,5 +105,26 @@ export default function mintAnimation() {
         duration: 0.4,
       },
       "<0%"
-    );
+    )
+    .to(".mint_image-wrapper", {
+      delay: 0.5,
+      width: "100%",
+      duration: 0.6,
+      ease: "power2.out",
+    })
+    .to(
+      ".mint_bottom-wrap",
+      {
+        marginTop: "0rem",
+        opacity: 0,
+        "grid-template-rows": "0fr",
+      },
+      "<0%"
+    )
+    .to(".mint_image", {
+      opacity: 0,
+      duration: 1,
+    });
+
+  mainTl.add(circlesTl).add(mintTl);
 }
