@@ -19,7 +19,7 @@ export default function tradeAnimation() {
       ".trade-animation .trade_speach-text",
       {
         text: {
-          value: "Yo, buy 40M BONK using USDC",
+          value: "Yo, buy 0.4 BTC using USDC",
         },
         duration: 3,
       },
@@ -100,16 +100,16 @@ export default function tradeAnimation() {
     }, 0)
     .to(".trade_popup-inner-wrap", {
       opacity: 0,
-      duration: 0.2,
+      duration: 1,
     })
     .to(
-      ".trade_popup-wrap",
+      ".trade_popup-wrap-inner",
       {
-        height: "0%",
-        duration: 0.8,
-        ease: "power4.inOut",
+        y: "105%",
+        duration: 1.2,
+        ease: "power4.out",
       },
-      "<30%"
+      "<0%"
     )
     .to(".trade-animation  .mobile-chat_msg-wrap.is-reverse", {
       "grid-template-rows": "1fr",
@@ -178,11 +178,11 @@ export default function tradeAnimation() {
       duration: 0.2,
     })
     .to(
-      ".trade_popup-wrap",
+      ".trade_popup-wrap-inner",
       {
-        height: "auto",
+        y: "0%",
         duration: 1.2,
-        ease: "power4.inOut",
+        ease: "power4.out",
       },
       "<30%"
     );

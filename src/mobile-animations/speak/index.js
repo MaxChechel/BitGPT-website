@@ -120,8 +120,10 @@ export default function speakAnimation() {
       {
         opacity: 1,
         height: "auto",
+        duration: 0.8,
+        ease: "power4.out",
       },
-      "<0%"
+      "<30%"
     )
     .to(".mobile_chat-wrap.is-speak", {
       delay: 1,
