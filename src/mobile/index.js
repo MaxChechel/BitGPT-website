@@ -156,7 +156,6 @@ document.fonts
 
 swapAnimation();
 integrateAnimation();
-privacyAnimation();
 
 const mainAtomateTl = automateAnimation();
 ScrollTrigger.create({
@@ -204,4 +203,12 @@ ScrollTrigger.create({
   onLeave: () => mainMintTl.pause(),
   onEnterBack: () => mainMintTl.play(),
   onLeaveBack: () => mainMintTl.pause(),
+});
+
+ScrollTrigger.create({
+  trigger: "[data-mint-animation]",
+  start: "top 50%",
+  end: "bottom 50%",
+  invalidateOnRefresh: true,
+  onEnter: () => privacyAnimation(),
 });

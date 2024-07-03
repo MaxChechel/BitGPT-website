@@ -127,4 +127,5 @@ export default function mintAnimation() {
     });
 
   mainTl.add(circlesTl).add(mintTl);
+  return mainTl;
 }
