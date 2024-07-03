@@ -7,7 +7,7 @@ export default function speakAnimation() {
   const svgRectQuantity = waveLines.length;
   const totalDuration = svgRectQuantity / 20;
 
-  const mainTl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+  const mainTl = gsap.timeline({ repeat: -1, repeatDelay: 1, paused: true });
   const tl = gsap.timeline();
   tl.to(".speak-animation .mic_svg", {
     delay: 0.5,

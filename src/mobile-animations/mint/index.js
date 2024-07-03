@@ -1,7 +1,7 @@
 import gsap from "gsap";
 
 export default function mintAnimation() {
-  const mainTl = gsap.timeline({ repeat: -1 });
+  const mainTl = gsap.timeline({ repeat: -1, paused: true });
   const circles = document.querySelectorAll(".mint_image-load-dots circle");
   const circlesTl = gsap.timeline();
   circlesTl.add(() => {

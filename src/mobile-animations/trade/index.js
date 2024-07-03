@@ -8,7 +8,7 @@ export default function tradeAnimation() {
   const svgRectQuantity = waveLines.length;
   const totalDuration = svgRectQuantity / 20;
   //
-  const mainTl = gsap.timeline({ repeat: -1 });
+  const mainTl = gsap.timeline({ repeat: -1, paused: true });
   const tl = gsap.timeline();
   tl.to(".trade-animation .mic_svg", {
     delay: 0.5,
