@@ -206,7 +206,7 @@ ScrollTrigger.create({
 });
 
 ScrollTrigger.create({
-  trigger: "[data-mint-animation]",
+  trigger: "[data-privacy-animation]",
   start: "top 50%",
   end: "bottom 50%",
   invalidateOnRefresh: true,
