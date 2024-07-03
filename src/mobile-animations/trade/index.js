@@ -60,13 +60,13 @@ export default function tradeAnimation() {
     }, 1)
     .to(
       ".trade-animation .mobile_waves-wrap",
-      { x: "0%", duration: totalDuration, ease: "none" },
+      { translateX: "0%", duration: totalDuration, ease: "none" },
       1
     )
     .to(
       ".trade-animation .mobile_waves",
       {
-        x: "0%",
+        translateX: "0%",
         duration: totalDuration,
         ease: "none",
         onComplete: () => {
