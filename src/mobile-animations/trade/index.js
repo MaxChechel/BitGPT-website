@@ -80,7 +80,6 @@ export default function tradeAnimation() {
       {
         opacity: 1,
         ease: "none",
-        duration: totalDuration,
         stagger: { each: `${totalDuration / svgRectQuantity}` },
       },
       1
