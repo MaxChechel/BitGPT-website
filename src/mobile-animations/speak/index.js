@@ -88,14 +88,14 @@ export default function speakAnimation() {
       duration: 0.5,
     })
     .to(".speak-animation .mobile-chat_msg-wrap.is-reverse", {
-      "grid-template-rows": "1fr",
+      gridTemplateRows: "1fr",
       duration: 0,
     })
     .to(".speak-animation .mobile-chat_msg-wrap.is-reverse", {
       opacity: 1,
     })
     .to(".speak-animation .mobile-chat_msg-wrap", {
-      "grid-template-rows": "1fr",
+      gridTemplateRows: "1fr",
       delay: 0.2,
       opacity: 1,
     })
@@ -125,7 +125,13 @@ export default function speakAnimation() {
       },
       "<30%"
     )
-    .to(".mobile-chat_message.is-img", { "grid-template-rows": "1fr" }, "<0%")
+    .to(".mobile-chat_message.is-img", {
+      gridTemplateRows: "1fr",
+      duration: 0,
+    })
+    .to(".mobile-chat_message.is-img", {
+      opacity: 1,
+    })
     .to(".mobile_chat-wrap.is-speak", {
       delay: 1,
       opacity: 0,
