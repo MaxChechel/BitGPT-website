@@ -158,6 +158,18 @@ swapAnimation();
 integrateAnimation();
 mintAnimation();
 privacyAnimation();
-automateAnimation();
+
 speakAnimation();
 tradeAnimation();
+
+const mainAtomateTl = automateAnimation();
+ScrollTrigger.create({
+  trigger: "[data-automate-animation]",
+  start: "top 50%",
+  end: "bottom 50%",
+  invalidateOnRefresh: true,
+  onEnter: () => mainAtomateTl.play(),
+  onLeave: () => mainAtomateTl.pause(),
+  onEnterBack: () => mainAtomateTl.play(),
+  onLeaveBack: () => mainAtomateTl.pause(),
+});

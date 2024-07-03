@@ -2,7 +2,7 @@ import gsap from "gsap";
 import TextPlugin from "gsap/TextPlugin";
 export default function automateAnimation() {
   gsap.registerPlugin(TextPlugin);
-  const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+  const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, paused: true });
 
   tl.to(".automate-animation .mobile-chat_msg-wrap.is-reverse", {
     opacity: 1,
@@ -66,4 +66,6 @@ export default function automateAnimation() {
       marginTop: "0rem",
       duration: 0,
     });
+
+  return tl;
 }
