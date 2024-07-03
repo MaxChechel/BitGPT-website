@@ -44,13 +44,13 @@ export default function speakAnimation() {
     }, 0.5)
     .to(
       ".speak-animation .mobile_waves-wrap",
-      { xPercent: "0%", duration: totalDuration, ease: "none" },
+      { translateX: "0%", duration: totalDuration, ease: "none" },
       1
     )
     .to(
       ".speak-animation .mobile_waves",
       {
-        xPercent: "0%",
+        translateX: "0%",
         duration: totalDuration,
         ease: "none",
         onComplete: () => {
