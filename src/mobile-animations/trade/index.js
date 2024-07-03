@@ -66,7 +66,7 @@ export default function tradeAnimation() {
     .to(
       ".trade_popup-inner-wrap .mobile_waves",
       {
-        translateX: "0%",
+        translateX: "50%",
         duration: totalDuration,
         ease: "none",
         onComplete: () => {
