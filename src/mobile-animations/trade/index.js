@@ -58,11 +58,11 @@ export default function tradeAnimation() {
           duration: 0.1,
         });
     }, 1)
-    .to(
-      ".trade_popup-inner-wrap .mobile_waves-wrap",
-      { translateX: "50%", duration: totalDuration, ease: "none" },
-      1
-    )
+    // .to(
+    //   ".trade_popup-inner-wrap .mobile_waves-wrap",
+    //   { translateX: "50%", duration: totalDuration, ease: "none" },
+    //   1
+    // )
     .to(
       ".trade_popup-inner-wrap .mobile_waves",
       {
