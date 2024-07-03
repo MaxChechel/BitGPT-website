@@ -16,6 +16,11 @@ circuitBoardAnimation(".section-hero-bg_img .circuit-lines-group path");
 //  Circuit animation for CTA section
 circuitBoardAnimation(".section-cta-bg_img .circuit-lines-group path");
 
+gsap.set(".mobile_waves-wrap", { translateX: "-50%" });
+gsap.set(".mobile_waves", {
+  translateX: "100%",
+});
+
 //////Hero loader
 document.fonts
   .load('1em "Plus Jakarta Sans"')

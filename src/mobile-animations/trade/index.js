@@ -168,9 +168,9 @@ export default function tradeAnimation() {
       },
       duration: 0,
     })
-    .set(".trade-animation .mobile_waves-wrap", { x: "-50%" })
+    .set(".trade-animation .mobile_waves-wrap", { translateX: "-50%" })
     .set(".trade-animation .mobile_waves", {
-      x: "100%",
+      translateX: "100%",
     })
     .to(".trade_popup-inner-wrap", {
       delay: 1,
