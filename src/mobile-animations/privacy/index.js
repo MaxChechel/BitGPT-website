@@ -3,7 +3,7 @@ import gsap from "gsap";
 export default function privacyAnimation() {
   const tl = gsap.timeline({});
   tl.to(".privacy_svg", {
-    scale: 1.7,
+    scale: 1.8,
     duration: 1.6,
   })
     .to(
