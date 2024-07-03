@@ -44,7 +44,7 @@ export default function speakAnimation() {
     }, 0.5)
     .to(
       ".speak-animation .mobile_waves-wrap",
-      { x: "50%", duration: totalDuration, ease: "none" },
+      { x: "0%", duration: totalDuration, ease: "none" },
       1
     )
     .to(
@@ -125,10 +125,6 @@ export default function speakAnimation() {
       },
       "<30%"
     )
-    .to(".mobile-chat_message.is-img", {
-      gridTemplateRows: "1fr",
-      duration: 0,
-    })
     .to(".mobile-chat_message.is-img", {
       opacity: 1,
     })
