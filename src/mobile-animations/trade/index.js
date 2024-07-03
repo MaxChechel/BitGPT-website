@@ -168,7 +168,6 @@ export default function tradeAnimation() {
       },
       duration: 0,
     })
-    .set(".trade-animation .mobile_waves-wrap", { translateX: "-50%" })
     .set(".trade-animation .mobile_waves", {
       translateX: "100%",
     })

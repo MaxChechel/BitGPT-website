@@ -137,7 +137,6 @@ export default function speakAnimation() {
       "--background-color--mic-svg-2": "#1f1f1f",
       duration: 0,
     })
-    .set(".speak-animation .mobile_waves-wrap", { translateX: "-50%" })
     .set(".speak-animation .mobile_waves", {
       translateX: "100%",
     })
