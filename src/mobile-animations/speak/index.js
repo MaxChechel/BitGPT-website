@@ -147,4 +147,6 @@ export default function speakAnimation() {
     });
 
   mainTl.add(tl);
+
+  return mainTl;
 }

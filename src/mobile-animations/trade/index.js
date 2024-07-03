@@ -188,4 +188,5 @@ export default function tradeAnimation() {
     );
 
   mainTl.add(tl).add(initialStylesTl);
+  return mainTl;
 }

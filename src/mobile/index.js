@@ -156,11 +156,7 @@ document.fonts
 
 swapAnimation();
 integrateAnimation();
-mintAnimation();
 privacyAnimation();
-
-speakAnimation();
-tradeAnimation();
 
 const mainAtomateTl = automateAnimation();
 ScrollTrigger.create({
@@ -172,4 +168,40 @@ ScrollTrigger.create({
   onLeave: () => mainAtomateTl.pause(),
   onEnterBack: () => mainAtomateTl.play(),
   onLeaveBack: () => mainAtomateTl.pause(),
+});
+
+const mainTradeTl = tradeAnimation();
+ScrollTrigger.create({
+  trigger: "[data-trade-animation]",
+  start: "top 50%",
+  end: "bottom 50%",
+  invalidateOnRefresh: true,
+  onEnter: () => mainTradeTl.play(),
+  onLeave: () => mainTradeTl.pause(),
+  onEnterBack: () => mainTradeTl.play(),
+  onLeaveBack: () => mainTradeTl.pause(),
+});
+
+const mainSpeakTl = speakAnimation();
+ScrollTrigger.create({
+  trigger: "[data-trade-animation]",
+  start: "top 50%",
+  end: "bottom 50%",
+  invalidateOnRefresh: true,
+  onEnter: () => mainSpeakTl.play(),
+  onLeave: () => mainSpeakTl.pause(),
+  onEnterBack: () => mainSpeakTl.play(),
+  onLeaveBack: () => mainSpeakTl.pause(),
+});
+
+const mainMintTl = mintAnimation();
+ScrollTrigger.create({
+  trigger: "[data-trade-animation]",
+  start: "top 50%",
+  end: "bottom 50%",
+  invalidateOnRefresh: true,
+  onEnter: () => mainMintTl.play(),
+  onLeave: () => mainMintTl.pause(),
+  onEnterBack: () => mainMintTl.play(),
+  onLeaveBack: () => mainMintTl.pause(),
 });
