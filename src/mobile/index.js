@@ -210,6 +210,5 @@ ScrollTrigger.create({
   start: "top 50%",
   end: "bottom 50%",
   invalidateOnRefresh: true,
-  markers: true,
   onEnter: () => privacyAnimation(),
 });
