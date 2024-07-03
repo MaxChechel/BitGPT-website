@@ -82,7 +82,7 @@ export default function tradeAnimation() {
         ease: "none",
         stagger: { each: `${totalDuration / svgRectQuantity}` },
       },
-      0
+      1
     )
     .add(() => {
       waveLines.forEach((waveLine, index) => {
