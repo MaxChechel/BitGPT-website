@@ -42,11 +42,11 @@ export default function speakAnimation() {
           duration: 0.1,
         });
     }, 0.5)
-    .to(
-      ".speak-animation .mobile_waves-wrap",
-      { translateX: "0%", duration: totalDuration, ease: "none" },
-      1
-    )
+    // .to(
+    //   ".speak-animation .mobile_waves-wrap",
+    //   { translateX: "0%", duration: totalDuration, ease: "none" },
+    //   1
+    // )
     .to(
       ".speak-animation .mobile_waves",
       {
@@ -66,7 +66,7 @@ export default function speakAnimation() {
         ease: "none",
         stagger: { each: `${totalDuration / svgRectQuantity}` },
       },
-      0.5
+      1
     )
     .add(() => {
       waveLines.forEach((waveLine, index) => {
@@ -81,7 +81,7 @@ export default function speakAnimation() {
           duration: totalDuration / svgRectQuantity / 2,
         });
       });
-    }, 0.5)
+    }, 0)
     .to(".speak_sound-wrap", {
       delay: 0.8,
       opacity: 0,
