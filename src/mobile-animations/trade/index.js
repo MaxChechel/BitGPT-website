@@ -153,6 +153,9 @@ export default function tradeAnimation() {
     .to(".trade-animation .mobile-chat_chat-outer-wrap", {
       opacity: 1,
       height: "auto",
+    })
+    .to(".trade-animation .mobile_chat-wrap", {
+      opacity: 0,
     });
 
   const initialStylesTl = gsap.timeline();
