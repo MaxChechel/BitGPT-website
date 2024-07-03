@@ -184,7 +184,7 @@ ScrollTrigger.create({
 
 const mainSpeakTl = speakAnimation();
 ScrollTrigger.create({
-  trigger: "[data-trade-animation]",
+  trigger: "[data-speak-animation]",
   start: "top 50%",
   end: "bottom 50%",
   invalidateOnRefresh: true,
@@ -196,7 +196,7 @@ ScrollTrigger.create({
 
 const mainMintTl = mintAnimation();
 ScrollTrigger.create({
-  trigger: "[data-trade-animation]",
+  trigger: "[data-mint-animation]",
   start: "top 50%",
   end: "bottom 50%",
   invalidateOnRefresh: true,
