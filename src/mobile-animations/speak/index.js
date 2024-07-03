@@ -125,7 +125,8 @@ export default function speakAnimation() {
       },
       "<30%"
     )
-    .to(".mobile-chat_message.is-img", {
+    .to(".mobile-chat_message-img-wrap", {
+      gridTemplateRows: "1fr",
       opacity: 1,
     })
     .to(".mobile_chat-wrap.is-speak", {
