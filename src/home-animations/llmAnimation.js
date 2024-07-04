@@ -1,98 +1,33 @@
-import { gsap } from 'gsap';
-import TextPlugin from 'gsap/TextPlugin';
-gsap.registerPlugin(TextPlugin);
+import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 
 export default function llmAnimation() {
-    const initTL = gsap.timeline({
-        defaults: { duration: 1 },
-        ease: 'circ.out',
+  gsap.registerPlugin(DrawSVGPlugin);
+  const pathSvgs = document.querySelectorAll(".llm-animation .llm_pulse");
+
+  const tween = gsap.timeline({
+    repeat: -1,
+  });
+
+  tween
+    .fromTo(
+      pathSvgs,
+      {
+        drawSVG: "0% 0%",
+        opacity: 1,
+      },
+      {
+        drawSVG: "0% 100%",
+        ease: "none",
+        duration: 0.6,
+      }
+    )
+    .to(pathSvgs, {
+      drawSVG: "100% 100%",
+      ease: "circ.out",
+      duration: 0.7,
     });
-    initTL
-        .to('.llm-a_bar.is-1', { width: '77%' })
-        .to(
-            '.llm-a_bar.is-1 .llm-a_bar-progress',
-            {
-                text: {
-                    value: '77%',
-                    delimiter: ' ',
-                },
-            },
-            '<0%'
-        )
-        .to('.llm-a_bar.is-2', { width: '51%' }, '<0%')
-        .to(
-            '.llm-a_bar.is-2 .llm-a_bar-progress',
-            {
-                text: {
-                    value: '51%',
-                    delimiter: ' ',
-                },
-            },
-            '<0%'
-        )
-        .to('.llm-a_bar.is-3', { width: '54%' }, '<0%')
-        .to(
-            '.llm-a_bar.is-3 .llm-a_bar-progress',
-            {
-                text: {
-                    value: '54%',
-                    delimiter: ' ',
-                },
-            },
-            '<0%'
-        )
-        .to('.llm-a_bar.is-5', { width: '72%' }, '<0%')
-        .to(
-            '.llm-a_bar.is-5 .llm-a_bar-progress',
-            {
-                text: {
-                    value: '72%',
-                    delimiter: ' ',
-                },
-                onComplete: () => {
-                    for (const bar of bars) {
-                        animateBar(bar.selector, bar.minRange, bar.maxRange);
-                    }
-                },
-            },
-            '<0%'
-        );
 
-    function animateBar(selector, minRange, maxRange) {
-        const tl = gsap.timeline({
-            defaults: {
-                duration: 0.2,
-            },
-        });
-
-        // Generate random values for this bar
-        const randomWidth =
-            Math.floor(Math.random() * (maxRange - minRange + 1)) + minRange;
-
-        // Update animations with random values for this bar
-        tl.to(selector, {
-            width: `${randomWidth}%`,
-        }).to(
-            `${selector} .llm-a_bar-progress`, // Assuming progress element has this class
-            {
-                text: {
-                    value: `${randomWidth}%`,
-                    delimiter: ' ',
-                },
-            },
-            '<0%'
-        );
-
-        // Schedule next animation frame update for this bar with a delay
-        setTimeout(() => {
-            animateBar(selector, minRange, maxRange);
-        }, Math.random() * 2000 + 1000); // Random delay between 1 and 4 seconds (adjust as needed)
-    }
-
-    const bars = [
-        { selector: '.llm-a_bar.is-1', minRange: 63, maxRange: 79 },
-        { selector: '.llm-a_bar.is-2', minRange: 43, maxRange: 56 },
-        { selector: '.llm-a_bar.is-3', minRange: 47, maxRange: 58 },
-        { selector: '.llm-a_bar.is-5', minRange: 68, maxRange: 74 },
-    ];
+  const fanTween = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+  fanTween.to(".llm_fan", { rotation: "+=360", duration: 3, ease: "none" });
 }
