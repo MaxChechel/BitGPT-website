@@ -3,8 +3,13 @@ import TextPlugin from "gsap/TextPlugin";
 gsap.registerPlugin(TextPlugin);
 export default function tradeAnimation() {
   const waveLines = document.querySelectorAll(
-    ".trade-animation .mobile_waves svg rect"
+    ".trade-animation .mobile_wave-bar"
   );
+
+  waveLines.forEach((bar) => {
+    const randomHeight = Math.random() * 55 + 25; // Random height between 25% and 100%
+    bar.style.height = `${randomHeight}%`;
+  });
   const svgRectQuantity = waveLines.length;
   const totalDuration = svgRectQuantity / 20;
   //
@@ -76,7 +81,7 @@ export default function tradeAnimation() {
       1
     )
     .to(
-      ".trade-animation .mobile_waves svg g",
+      ".trade-animation .mobile_wave-bar",
       {
         opacity: 1,
         ease: "none",
@@ -85,19 +90,45 @@ export default function tradeAnimation() {
       1
     )
     .add(() => {
-      waveLines.forEach((waveLine, index) => {
-        const multiplier = index * (svgRectQuantity * 0.0009);
+      waveLines.forEach((bar) => {
         const tl = gsap.timeline();
-        tl.to(waveLine, {
-          fill: "#fff",
-          duration: totalDuration / svgRectQuantity / 2,
-          delay: totalDuration / svgRectQuantity / 2 + multiplier,
-        }).to(waveLine, {
-          fill: "#5C5F66",
-          duration: totalDuration / svgRectQuantity / 2,
-        });
+        tl.to(bar, {
+          duration: gsap.utils.random(0.2, 0.5, 0.025),
+          height: gsap.utils.random(5, 55, 5) + "%",
+          ease: "sine.inOut",
+        })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(20, 75, 5) + "%",
+            ease: "sine.inOut",
+          })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(10, 60, 5) + "%",
+            ease: "sine.inOut",
+          })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(10, 60, 5) + "%",
+            ease: "sine.inOut",
+          })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(10, 60, 5) + "%",
+            ease: "sine.inOut",
+          })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(10, 60, 5) + "%",
+            ease: "sine.inOut",
+          })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(10, 60, 5) + "%",
+            ease: "sine.inOut",
+          });
       });
-    }, 0)
+    }, 1)
     .to(".trade_popup-inner-wrap", {
       opacity: 0,
       duration: 1,

@@ -2,8 +2,14 @@ import gsap from "gsap";
 
 export default function speakAnimation() {
   const waveLines = document.querySelectorAll(
-    ".speak-animation .mobile_waves svg rect"
+    ".speak-animation .mobile_wave-bar"
   );
+
+  waveLines.forEach((bar) => {
+    const randomHeight = Math.random() * 55 + 25; // Random height between 25% and 100%
+    bar.style.height = `${randomHeight}%`;
+  });
+
   const svgRectQuantity = waveLines.length;
   const totalDuration = svgRectQuantity / 20;
 
@@ -60,28 +66,54 @@ export default function speakAnimation() {
       1
     )
     .to(
-      ".speak-animation .mobile_waves svg g",
+      ".speak-animation .mobile_wave-bar",
       {
         opacity: 1,
         ease: "none",
         stagger: { each: `${totalDuration / svgRectQuantity}` },
       },
-      1
+      1.1
     )
     .add(() => {
-      waveLines.forEach((waveLine, index) => {
-        const multiplier = index * (svgRectQuantity * 0.0009);
+      waveLines.forEach((bar) => {
         const tl = gsap.timeline();
-        tl.to(waveLine, {
-          fill: "#fff",
-          duration: totalDuration / svgRectQuantity / 2,
-          delay: totalDuration / svgRectQuantity / 2 + multiplier,
-        }).to(waveLine, {
-          fill: "#5C5F66",
-          duration: totalDuration / svgRectQuantity / 2,
-        });
+        tl.to(bar, {
+          duration: gsap.utils.random(0.2, 0.5, 0.025),
+          height: gsap.utils.random(5, 55, 5) + "%",
+          ease: "sine.inOut",
+        })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(20, 75, 5) + "%",
+            ease: "sine.inOut",
+          })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(10, 60, 5) + "%",
+            ease: "sine.inOut",
+          })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(10, 60, 5) + "%",
+            ease: "sine.inOut",
+          })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(10, 60, 5) + "%",
+            ease: "sine.inOut",
+          })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(10, 60, 5) + "%",
+            ease: "sine.inOut",
+          })
+          .to(bar, {
+            duration: gsap.utils.random(0.2, 0.5, 0.025),
+            height: gsap.utils.random(10, 60, 5) + "%",
+            ease: "sine.inOut",
+          });
       });
-    }, 0)
+    }, 1)
     .to(".speak_sound-wrap", {
       delay: 0.8,
       opacity: 0,
