@@ -5,23 +5,23 @@ export default function speakAnimation() {
     ".speak-animation .mobile_wave-bar"
   );
 
-  waveLines.forEach((bar) => {
-    const randomHeight = Math.random() * 55 + 25; // Random height between 25% and 100%
-    bar.style.height = `${randomHeight}%`;
-  });
-
   const svgRectQuantity = waveLines.length;
   const totalDuration = svgRectQuantity / 20;
 
   const mainTl = gsap.timeline({ repeat: -1, repeatDelay: 1, paused: true });
   const tl = gsap.timeline();
   tl.to(".speak-animation .mic_svg", {
-    delay: 0.5,
     "--background-color--mic-svg-1": "#0A5CFF",
     "--background-color--mic-svg-2": "#063799",
   })
     .add(() => {
-      const tl = gsap.timeline({ repeat: 3 });
+      const tl = gsap.timeline({
+        repeat: 2,
+        onComplete: () => {
+          gsap.to(".speak-animation .mobile_waves", { width: "0%" });
+          gsap.to(".speak-animation .mobile_wave-bar", { clearProps: "all" });
+        },
+      });
       tl.to(".speak-animation .mic_overlay", {
         opacity: 1,
         scale: 1.5,
@@ -48,74 +48,103 @@ export default function speakAnimation() {
           duration: 0.1,
         });
     }, 0.5)
-    // .to(
-    //   ".speak-animation .mobile_waves-wrap",
-    //   { translateX: "0%", duration: totalDuration, ease: "none" },
-    //   1
-    // )
     .to(
       ".speak-animation .mobile_waves",
       {
-        translateX: "0%",
-        duration: totalDuration,
-        ease: "none",
-        onComplete: () => {
-          gsap.to(".speak-animation .mic_overlay", { opacity: 0 });
-        },
-      },
-      1
-    )
-    .to(
-      ".speak-animation .mobile_wave-bar",
-      {
         opacity: 1,
-        ease: "none",
-        stagger: { each: `${totalDuration / svgRectQuantity}` },
+        width: "100%",
+        ease: "power4.out",
+        duration: 0.8,
       },
-      1.1
+      "<0%"
     )
     .add(() => {
-      waveLines.forEach((bar) => {
-        const tl = gsap.timeline();
-        tl.to(bar, {
-          duration: gsap.utils.random(0.2, 0.5, 0.025),
-          height: gsap.utils.random(5, 55, 5) + "%",
+      const tl = gsap.timeline({ repeat: 10, yoyo: true });
+      tl.to(".speak-animation .mobile_wave-bar.is-center", {
+        duration: 0.15,
+        height: "100%",
+        ease: "sine.inOut",
+      })
+        .to(
+          ".speak-animation .mobile_wave-bar.is-2",
+          {
+            duration: 0.2,
+            height: "68%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-3",
+          {
+            duration: 0.2,
+            height: "50%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-4",
+          {
+            duration: 0.2,
+            height: "38%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-5",
+          {
+            duration: 0.2,
+            height: "28%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(".speak-animation .mobile_wave-bar.is-center", {
+          duration: 0.15,
+          height: "80%",
           ease: "sine.inOut",
         })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(20, 75, 5) + "%",
+        .to(
+          ".speak-animation .mobile_wave-bar.is-2",
+          {
+            duration: 0.15,
+            height: "58%",
             ease: "sine.inOut",
-          })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(10, 60, 5) + "%",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-3",
+          {
+            duration: 0.15,
+            height: "40%",
             ease: "sine.inOut",
-          })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(10, 60, 5) + "%",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-4",
+          {
+            duration: 0.15,
+            height: "28%",
             ease: "sine.inOut",
-          })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(10, 60, 5) + "%",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-5",
+          {
+            duration: 0.15,
+            height: "20%",
             ease: "sine.inOut",
-          })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(10, 60, 5) + "%",
-            ease: "sine.inOut",
-          })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(10, 60, 5) + "%",
-            ease: "sine.inOut",
-          });
-      });
-    }, 1)
+          },
+          "<0%"
+        );
+    }, "<0%")
     .to(".speak_sound-wrap", {
-      delay: 0.8,
+      delay: 3,
       opacity: 0,
       duration: 0.5,
     })
