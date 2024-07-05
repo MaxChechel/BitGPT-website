@@ -47,7 +47,6 @@ export default function swapAnimation() {
           repeatDelay: 3,
         },
       });
-      console.log(`+=${360 / items.length}`);
       tl.to(orbitWrap, {
         rotation: `+=${360 / items.length}`,
       });

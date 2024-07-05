@@ -32,6 +32,6 @@ export default function llmAnimation() {
   fanTween.fromTo(
     ".llm_fan",
     { rotate: 0, ease: "none" },
-    { rotate: 360, duration: 1.5, ease: "none" }
+    { rotate: 360, duration: 0.3, ease: "none" }
   );
 }
