@@ -29,5 +29,9 @@ export default function llmAnimation() {
     });
 
   const fanTween = gsap.timeline({ repeat: -1, repeatDelay: 0 });
-  fanTween.to(".llm_fan", { rotation: "+=360", duration: 1.5, ease: "none" });
+  fanTween.fromTo(
+    ".llm_fan",
+    { rotate: 0, ease: "none" },
+    { rotate: 360, duration: 1.5, ease: "none" }
+  );
 }
