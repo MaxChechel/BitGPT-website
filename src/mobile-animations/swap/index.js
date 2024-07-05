@@ -96,6 +96,21 @@ export default function swapAnimation() {
 
         tween.play();
       });
+      const glowTl = gsap.timeline({
+        repeat: -1,
+
+        delay: 0.5,
+        repeatDelay: 3,
+      });
+      glowTl
+        .to(".swap_center-img-glow", {
+          opacity: 1,
+          duration: 0.75,
+        })
+        .to(".swap_center-img-glow", {
+          opacity: 0,
+          duration: 0.75,
+        });
     });
   }
 
