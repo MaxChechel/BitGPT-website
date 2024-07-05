@@ -100,9 +100,20 @@ export default function swapAnimation() {
   }
 
   initializeAnimations();
+  const mm = gsap.matchMedia();
 
-  window.addEventListener("resize", () => {
-    killAllAnimations();
-    initializeAnimations();
+  mm.add("(min-width: 992px)", () => {
+    const resizeHandler = () => {
+      killAllAnimations();
+      initializeAnimations();
+    };
+
+    // Add the resize event listener when the media query matches
+    window.addEventListener("resize", resizeHandler);
+
+    // Return a cleanup function to remove the event listener when the media query no longer matches
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
   });
 }

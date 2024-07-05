@@ -60,8 +60,22 @@ export default function integrateAnimation() {
   // Initialize animation on load
   initializeAnimation();
 
-  // Reinitialize animation on window resize
-  window.addEventListener("resize", () => {
+  const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 992px)", () => {
+    const resizeHandler = () => {
+      initializeAnimation();
+    };
+
+    // Add the resize event listener when the media query matches
+    window.addEventListener("resize", resizeHandler);
+
+    // Run the function initially to handle the current state
     initializeAnimation();
+
+    // Return a cleanup function to remove the event listener when the media query no longer matches
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
   });
 }
