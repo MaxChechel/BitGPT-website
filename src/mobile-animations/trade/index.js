@@ -186,7 +186,7 @@ export default function tradeAnimation() {
       height: "auto",
     })
     .to(".trade-animation .mobile_chat-wrap", {
-      delay: 1,
+      delay: 2,
       opacity: 0,
     });
 
