@@ -295,7 +295,7 @@ cards.forEach((card, index) => {
   });
   mm.add("(max-width: 479px)", () => {
     gsap.set(card, {
-      top: 240 + index * 10,
+      top: 220 + index * 8,
       scale: 1,
     });
   });
