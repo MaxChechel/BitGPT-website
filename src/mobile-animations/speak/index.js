@@ -363,7 +363,7 @@ export default function speakAnimation() {
     .set(".speak-animation .mobile_waves", {
       width: "100%",
     })
-    .set(".speak-animation .mobile_waves", {
+    .to(".speak-animation .mobile_waves", {
       opacity: "12%",
       duration: 0.5,
     })
