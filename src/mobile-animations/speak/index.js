@@ -19,7 +19,7 @@ export default function speakAnimation() {
       const tl = gsap.timeline({
         repeat: 2,
         onComplete: () => {
-          gsap.to(".speak-animation .mobile_wave-bar", { clearProps: "all" });
+          //gsap.to(".speak-animation .mobile_wave-bar", { clearProps: "all" });
         },
       });
       tl.to(".speak-animation .mic_overlay", {
