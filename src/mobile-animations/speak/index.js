@@ -162,17 +162,17 @@ export default function speakAnimation() {
     })
     .to(".speak-animation .mobile_loader-content", {
       backgroundPositionX: "100%",
-      duration: 1,
-      ease: "linear",
-    })
-    .to(".speak-animation .mobile_loader-content", {
-      backgroundPositionX: "0%",
       duration: 0.6,
       ease: "linear",
     })
     .to(".speak-animation .mobile_loader-content", {
+      backgroundPositionX: "0%",
+      duration: 0.4,
+      ease: "linear",
+    })
+    .to(".speak-animation .mobile_loader-content", {
       backgroundPositionX: "100%",
-      duration: 1,
+      duration: 0.6,
       ease: "linear",
     })
     .to(".mobile_loader-content-wrap", { opacity: 0, height: 0 })

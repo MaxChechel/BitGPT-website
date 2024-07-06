@@ -62,7 +62,7 @@ export default function swapAnimation() {
 
       const pathSvgs = document.querySelectorAll(".pulse-group");
 
-      pathSvgs.forEach((svg) => {
+      pathSvgs.forEach((svg, i) => {
         const path = svg.querySelector(".pulse-path");
         const line = svg.querySelector(".pulse-line");
         const timeToPlay = 1.5;
@@ -86,7 +86,7 @@ export default function swapAnimation() {
             start: 1,
             end: 0,
           },
-          delay: 0,
+          delay: i * 0.1,
           duration: timeToPlay,
           repeat: -1,
           repeatDelay: timeDelay,

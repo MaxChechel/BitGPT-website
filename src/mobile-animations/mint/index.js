@@ -4,6 +4,15 @@ export default function mintAnimation() {
   const mainTl = gsap.timeline({ repeat: -1, paused: true });
   const circles = document.querySelectorAll(".mint_image-load-dots circle");
   const circlesTl = gsap.timeline();
+
+  let imgWidthInit = "100%";
+  let imgWidth = "45%";
+  let mm = gsap.matchMedia();
+  mm.add("(max-width: 479px)", () => {
+    imgWidth = "13rem";
+    imgWidthInit = "16rem";
+  });
+
   circlesTl.add(() => {
     circles.forEach((circle, index) => {
       const tl = gsap.timeline({ repeat: 5 });
@@ -36,19 +45,15 @@ export default function mintAnimation() {
       "<50%"
     )
     .to(".mint_image-wrapper", {
-      width: "80%",
+      width: imgWidth,
       duration: 0.6,
       ease: "power2.out",
     })
-    .to(
-      ".mint_bottom-wrap",
-      {
-        marginTop: "0.75rem",
-        opacity: 1,
-        "grid-template-rows": "1fr",
-      },
-      "<0%"
-    )
+    .to(".mint_bottom-wrap", {
+      marginTop: "0.75rem",
+      opacity: 1,
+      "grid-template-rows": "1fr",
+    })
     .to(".mint_cta .message", {
       delay: 0.5,
       scale: 0.98,
@@ -106,21 +111,22 @@ export default function mintAnimation() {
       },
       "<0%"
     )
-    .to(".mint_image-wrapper", {
-      delay: 0.5,
-      width: "100%",
-      duration: 0.6,
-      ease: "power2.out",
-    })
     .to(
       ".mint_bottom-wrap",
       {
+        delay: 1.5,
         marginTop: "0rem",
         opacity: 0,
         "grid-template-rows": "0fr",
       },
       "<0%"
     )
+    .to(".mint_image-wrapper", {
+      width: imgWidthInit,
+      duration: 1,
+      ease: "power2.out",
+    })
+
     .to(".mint_image", {
       opacity: 0,
       duration: 1,
