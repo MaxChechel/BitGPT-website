@@ -62,6 +62,9 @@ export default function speakAnimation() {
     .add(() => {
       const colorTl = gsap.timeline();
       colorTl
+        .to(".mobile_waves", {
+          opacity: "100%",
+        })
         .to(".speak-animation .mobile_wave-bar.is-center", {
           duration: 0.2,
           backgroundColor: "#70a0ff",
