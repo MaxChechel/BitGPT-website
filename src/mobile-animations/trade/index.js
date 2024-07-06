@@ -6,12 +6,6 @@ export default function tradeAnimation() {
     ".trade-animation .mobile_wave-bar"
   );
 
-  waveLines.forEach((bar) => {
-    const randomHeight = Math.random() * 55 + 25; // Random height between 25% and 100%
-    bar.style.height = `${randomHeight}%`;
-  });
-  const svgRectQuantity = waveLines.length;
-  const totalDuration = svgRectQuantity / 20;
   //
   const mainTl = gsap.timeline({ repeat: -1, paused: true });
   const tl = gsap.timeline();
@@ -20,6 +14,17 @@ export default function tradeAnimation() {
     "--background-color--mic-svg-1": "#0A5CFF",
     "--background-color--mic-svg-2": "#063799",
   })
+
+    .to(
+      ".trade-animation .mobile_waves",
+      {
+        opacity: "1",
+        width: "100%",
+        ease: "power4.out",
+        duration: 0.5,
+      },
+      "<0%"
+    )
     .to(
       ".trade-animation .trade_speach-text",
       {
@@ -31,7 +36,12 @@ export default function tradeAnimation() {
       1.2
     )
     .add(() => {
-      const tl = gsap.timeline({ repeat: 3 });
+      const tl = gsap.timeline({
+        repeat: 3,
+        onComplete: () => {
+          gsap.to(".trade-animation .mobile_wave-bar", { clearProps: "all" });
+        },
+      });
       tl.to(".trade-animation .mic_overlay", {
         opacity: 1,
         scale: 1,
@@ -63,72 +73,252 @@ export default function tradeAnimation() {
           duration: 0.1,
         });
     }, 1)
-    // .to(
-    //   ".trade_popup-inner-wrap .mobile_waves-wrap",
-    //   { translateX: "50%", duration: totalDuration, ease: "none" },
-    //   1
-    // )
-    .to(
-      ".trade_popup-inner-wrap .mobile_waves",
-      {
-        translateX: "0%",
-        duration: totalDuration,
-        ease: "none",
-        onComplete: () => {
-          gsap.to(".trade-animation .mic_overlay", { opacity: 0, scale: 0 });
-        },
-      },
-      1
-    )
-    .to(
-      ".trade-animation .mobile_wave-bar",
-      {
-        opacity: 1,
-        ease: "none",
-        stagger: { each: `${totalDuration / svgRectQuantity}` },
-      },
-      1
-    )
     .add(() => {
-      waveLines.forEach((bar) => {
-        const tl = gsap.timeline();
-        tl.to(bar, {
-          duration: gsap.utils.random(0.2, 0.5, 0.025),
-          height: gsap.utils.random(5, 55, 5) + "%",
+      const colorTl = gsap.timeline();
+      colorTl
+        .to(".trade-animation .mobile_waves", {
+          opacity: 1,
+          duration: 0.4,
+        })
+        .to(".trade-animation .mobile_wave-bar.is-center", {
+          duration: 0.4,
+          backgroundColor: "#70a0ff",
+        })
+        .to(
+          ".trade-animation .mobile_wave-bar.is-2",
+          {
+            duration: 0.4,
+            backgroundColor: "#3d7eff",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-3",
+          {
+            duration: 0.4,
+            backgroundColor: "rgba(10, 92, 255, 0.8)",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-4",
+          {
+            duration: 0.4,
+            backgroundColor: "rgba(10, 92, 255, 0.7)",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-5",
+          {
+            duration: 0.4,
+            backgroundColor: "rgba(10, 92, 255, 0.6)",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-6",
+          {
+            duration: 0.4,
+            backgroundColor: "rgba(10, 92, 255, 0.5)",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-7",
+          {
+            duration: 0.4,
+            backgroundColor: "rgba(10, 92, 255, 0.4)",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-8",
+          {
+            duration: 0.4,
+            backgroundColor: "rgba(10, 92, 255, 0.3)",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-9",
+          {
+            duration: 0.4,
+            backgroundColor: "rgba(10, 92, 255, 0.2)",
+          },
+          "<0%"
+        );
+
+      const tl = gsap.timeline({ delay: 0.4, repeat: 10, yoyo: true });
+      tl.to(".trade-animation .mobile_wave-bar.is-center", {
+        duration: 0.2,
+        height: "100%",
+        ease: "sine.inOut",
+      })
+        .to(
+          ".trade-animation .mobile_wave-bar.is-2",
+          {
+            duration: 0.15,
+            height: "68%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-3",
+          {
+            duration: 0.15,
+            height: "50%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-4",
+          {
+            duration: 0.1,
+            height: "38%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-5",
+          {
+            duration: 0.1,
+            height: "28%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(".trade-animation .mobile_wave-bar.is-center", {
+          duration: 0.15,
+          height: "65%",
           ease: "sine.inOut",
         })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(20, 75, 5) + "%",
+        .to(
+          ".trade-animation .mobile_wave-bar.is-2",
+          {
+            duration: 0.1,
+            height: "58%",
             ease: "sine.inOut",
-          })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(10, 60, 5) + "%",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-3",
+          {
+            duration: 0.1,
+            height: "40%",
             ease: "sine.inOut",
-          })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(10, 60, 5) + "%",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-4",
+          {
+            duration: 0.15,
+            height: "28%",
             ease: "sine.inOut",
-          })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(10, 60, 5) + "%",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-5",
+          {
+            duration: 0.15,
+            height: "20%",
             ease: "sine.inOut",
-          })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(10, 60, 5) + "%",
+          },
+          "<0%"
+        )
+        .to(".trade-animation .mobile_wave-bar.is-center", {
+          duration: 0.1,
+          height: "75%",
+          ease: "sine.inOut",
+        })
+        .to(
+          ".trade-animation .mobile_wave-bar.is-2",
+          {
+            duration: 0.1,
+            height: "48%",
             ease: "sine.inOut",
-          })
-          .to(bar, {
-            duration: gsap.utils.random(0.2, 0.5, 0.025),
-            height: gsap.utils.random(10, 60, 5) + "%",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-3",
+          {
+            duration: 0.1,
+            height: "32%",
             ease: "sine.inOut",
-          });
-      });
-    }, 1)
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-4",
+          {
+            duration: 0,
+            height: "26%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-5",
+          {
+            duration: 0.1,
+            height: "20%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(".trade-animation .mobile_wave-bar.is-center", {
+          duration: 0.1,
+          height: "24%",
+          ease: "sine.inOut",
+        })
+        .to(
+          ".trade-animation .mobile_wave-bar.is-2",
+          {
+            duration: 0.1,
+            height: "32%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-3",
+          {
+            duration: 0.1,
+            height: "28%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-4",
+          {
+            duration: 0,
+            height: "26%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".trade-animation .mobile_wave-bar.is-5",
+          {
+            duration: 0.1,
+            height: "18%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        );
+    }, "<0%")
+    .to(".trade-animation .mobile_waves", {
+      width: "0%",
+      opacity: "12%",
+    })
     .to(".trade_popup-inner-wrap", {
       opacity: 0,
       duration: 1,
@@ -181,17 +371,16 @@ export default function tradeAnimation() {
       },
       "<0%"
     )
+
     .to(".trade-animation .mobile-chat_chat-outer-wrap", {
       opacity: 1,
       height: "auto",
     })
+
     .to(".trade-animation .mobile_chat-wrap", {
       delay: 2,
       opacity: 0,
-    });
-
-  const initialStylesTl = gsap.timeline();
-  initialStylesTl
+    })
     .set(".trade-animation .mic_svg", {
       "--background-color--mic-svg-1": "#292929",
       "--background-color--mic-svg-2": "#1f1f1f",
@@ -204,8 +393,9 @@ export default function tradeAnimation() {
       duration: 0,
     })
     .set(".trade-animation .mobile_waves", {
-      translateX: "100%",
+      width: "100%",
     })
+
     .to(".trade_popup-inner-wrap", {
       delay: 1,
       opacity: 1,
@@ -221,6 +411,52 @@ export default function tradeAnimation() {
       "<30%"
     );
 
-  mainTl.add(tl).add(initialStylesTl);
+  const initialStylesTl = gsap.timeline();
+  initialStylesTl;
+  // .set(".trade-animation .mic_svg", {
+  //   "--background-color--mic-svg-1": "#292929",
+  //   "--background-color--mic-svg-2": "#1f1f1f",
+  //   duration: 0,
+  // })
+  // .set(".trade-animation .mobile_waves", {
+  //   opacity: "12%",
+  //   duration: 0,
+  //   clearProps: "all",
+  // })
+  // .set(".trade-animation .trade_speach-text", {
+  //   text: {
+  //     value: "",
+  //   },
+  //   duration: 0,
+  // })
+  // .set(".trade-animation .mobile_waves", {
+  //   width: "100%",
+  // })
+
+  // .to(".trade_popup-inner-wrap", {
+  //   delay: 1,
+  //   opacity: 1,
+  //   duration: 0.2,
+  // })
+
+  // .to(
+  //   ".trade_popup-wrap-inner",
+  //   {
+  //     y: "0%",
+  //     duration: 1.2,
+  //     ease: "power4.out",
+  //   },
+  //   "<30%"
+  // )
+  // .to(
+  //   ".trade-animation .mobile_waves",
+  //   {
+  //     opacity: "12%",
+  //     duration: 0,
+  //   },
+  //   "<0%"
+  // );
+
+  mainTl.add(tl);
   return mainTl;
 }

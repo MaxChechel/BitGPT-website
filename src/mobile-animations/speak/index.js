@@ -24,14 +24,9 @@ export default function speakAnimation() {
       });
       tl.to(".speak-animation .mic_overlay", {
         opacity: 1,
-        scale: 1.25,
+        scale: 1.5,
         duration: 0.4,
       })
-        .to(".speak-animation .mic_overlay", {
-          opacity: 1,
-          scale: 1.5,
-          duration: 0.4,
-        })
         .to(".speak-animation .mic_overlay", {
           scale: 1.2,
           duration: 0.1,
@@ -66,7 +61,7 @@ export default function speakAnimation() {
     .add(() => {
       const colorTl = gsap.timeline();
       colorTl
-        .to(".mobile_waves", {
+        .to(".speak-animation .mobile_waves", {
           opacity: "100%",
           duration: 0.4,
         })
