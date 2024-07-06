@@ -64,11 +64,16 @@ export default function speakAnimation() {
       colorTl
         .to(".mobile_waves", {
           opacity: "100%",
-        })
-        .to(".speak-animation .mobile_wave-bar.is-center", {
           duration: 0.2,
-          backgroundColor: "#70a0ff",
         })
+        .to(
+          ".speak-animation .mobile_wave-bar.is-center",
+          {
+            duration: 0.2,
+            backgroundColor: "#70a0ff",
+          },
+          "<0%"
+        )
         .to(
           ".speak-animation .mobile_wave-bar.is-2",
           {
