@@ -362,12 +362,19 @@ export default function speakAnimation() {
     })
     .set(".speak-animation .mobile_waves", {
       width: "100%",
-      opacity: "12%",
     })
-    .to(".speak_sound-wrap, .speak-animation .mobile_waves", {
-      opacity: 1,
+    .set(".speak-animation .mobile_waves", {
+      opacity: "12%",
       duration: 0.5,
-    });
+    })
+    .to(
+      ".speak_sound-wrap",
+      {
+        opacity: 1,
+        duration: 0.5,
+      },
+      "<0%"
+    );
 
   mainTl.add(tl);
 
