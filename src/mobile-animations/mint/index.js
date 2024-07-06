@@ -9,8 +9,8 @@ export default function mintAnimation() {
   let imgWidth = "45%";
   let mm = gsap.matchMedia();
   mm.add("(max-width: 479px)", () => {
-    imgWidth = "13rem";
-    imgWidthInit = "16rem";
+    imgWidth = "11rem";
+    imgWidthInit = "14rem";
   });
 
   circlesTl.add(() => {
