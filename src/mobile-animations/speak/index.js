@@ -25,7 +25,7 @@ export default function speakAnimation() {
       });
       tl.to(".speak-animation .mic_overlay", {
         opacity: 1,
-        scale: 1.05,
+        scale: 1.25,
         duration: 0.4,
       })
         .to(".speak-animation .mic_overlay", {
