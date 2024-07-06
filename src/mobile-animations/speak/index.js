@@ -25,9 +25,14 @@ export default function speakAnimation() {
       });
       tl.to(".speak-animation .mic_overlay", {
         opacity: 1,
-        scale: 1.5,
+        scale: 1.05,
         duration: 0.4,
       })
+        .to(".speak-animation .mic_overlay", {
+          opacity: 1,
+          scale: 1.5,
+          duration: 0.4,
+        })
         .to(".speak-animation .mic_overlay", {
           scale: 1.2,
           duration: 0.1,
