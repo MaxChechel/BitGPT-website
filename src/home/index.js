@@ -329,7 +329,7 @@ mm.add("(max-width: 479px)", () => {
       trigger: ".section-heading_wrapper.is-cards",
       start: "top 80",
       endTrigger: ".last-card",
-      end: "top 220",
+      end: "top 210",
       pin: true,
       pinSpacing: false,
       scrub: 1,
