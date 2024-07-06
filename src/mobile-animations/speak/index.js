@@ -11,6 +11,7 @@ export default function speakAnimation() {
   const mainTl = gsap.timeline({ repeat: -1, repeatDelay: 1, paused: true });
   const tl = gsap.timeline();
   tl.to(".speak-animation .mic_svg", {
+    delay: 0.5,
     "--background-color--mic-svg-1": "#0A5CFF",
     "--background-color--mic-svg-2": "#063799",
   })
@@ -61,14 +62,14 @@ export default function speakAnimation() {
     .add(() => {
       const tl = gsap.timeline({ repeat: 10, yoyo: true });
       tl.to(".speak-animation .mobile_wave-bar.is-center", {
-        duration: 0.15,
+        duration: 0.2,
         height: "100%",
         ease: "sine.inOut",
       })
         .to(
           ".speak-animation .mobile_wave-bar.is-2",
           {
-            duration: 0.2,
+            duration: 0.15,
             height: "68%",
             ease: "sine.inOut",
           },
@@ -77,7 +78,7 @@ export default function speakAnimation() {
         .to(
           ".speak-animation .mobile_wave-bar.is-3",
           {
-            duration: 0.2,
+            duration: 0.15,
             height: "50%",
             ease: "sine.inOut",
           },
@@ -86,7 +87,7 @@ export default function speakAnimation() {
         .to(
           ".speak-animation .mobile_wave-bar.is-4",
           {
-            duration: 0.2,
+            duration: 0.1,
             height: "38%",
             ease: "sine.inOut",
           },
@@ -95,7 +96,7 @@ export default function speakAnimation() {
         .to(
           ".speak-animation .mobile_wave-bar.is-5",
           {
-            duration: 0.2,
+            duration: 0.1,
             height: "28%",
             ease: "sine.inOut",
           },
@@ -103,13 +104,13 @@ export default function speakAnimation() {
         )
         .to(".speak-animation .mobile_wave-bar.is-center", {
           duration: 0.15,
-          height: "80%",
+          height: "65%",
           ease: "sine.inOut",
         })
         .to(
           ".speak-animation .mobile_wave-bar.is-2",
           {
-            duration: 0.15,
+            duration: 0.1,
             height: "58%",
             ease: "sine.inOut",
           },
@@ -118,7 +119,7 @@ export default function speakAnimation() {
         .to(
           ".speak-animation .mobile_wave-bar.is-3",
           {
-            duration: 0.15,
+            duration: 0.1,
             height: "40%",
             ease: "sine.inOut",
           },
@@ -138,6 +139,88 @@ export default function speakAnimation() {
           {
             duration: 0.15,
             height: "20%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(".speak-animation .mobile_wave-bar.is-center", {
+          duration: 0.1,
+          height: "75%",
+          ease: "sine.inOut",
+        })
+        .to(
+          ".speak-animation .mobile_wave-bar.is-2",
+          {
+            duration: 0.1,
+            height: "48%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-3",
+          {
+            duration: 0.1,
+            height: "32%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-4",
+          {
+            duration: 0,
+            height: "26%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-5",
+          {
+            duration: 0.1,
+            height: "20%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(".speak-animation .mobile_wave-bar.is-center", {
+          duration: 0.1,
+          height: "24%",
+          ease: "sine.inOut",
+        })
+        .to(
+          ".speak-animation .mobile_wave-bar.is-2",
+          {
+            duration: 0.1,
+            height: "32%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-3",
+          {
+            duration: 0.1,
+            height: "28%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-4",
+          {
+            duration: 0,
+            height: "26%",
+            ease: "sine.inOut",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-5",
+          {
+            duration: 0.1,
+            height: "18%",
             ease: "sine.inOut",
           },
           "<0%"
@@ -199,9 +282,9 @@ export default function speakAnimation() {
       duration: 0,
     })
     .set(".speak-animation .mobile_waves", {
-      translateX: "100%",
+      width: "100%",
     })
-    .to(".speak_sound-wrap", {
+    .to(".speak_sound-wrap, .speak-animation .mobile_waves", {
       opacity: 1,
       duration: 0.5,
     });
