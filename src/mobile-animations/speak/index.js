@@ -60,6 +60,77 @@ export default function speakAnimation() {
       "<0%"
     )
     .add(() => {
+      const colorTl = gsap.timeline();
+      colorTl
+        .to(".speak-animation .mobile_wave-bar.is-center", {
+          duration: 0.2,
+          backgroundColor: "#70a0ff",
+        })
+        .to(
+          ".speak-animation .mobile_wave-bar.is-2",
+          {
+            duration: 0.2,
+            backgroundColor: "#3d7eff",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-3",
+          {
+            duration: 0.2,
+            backgroundColor: "rgba(10, 92, 255, 0.8)",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-4",
+          {
+            duration: 0.2,
+            backgroundColor: "rgba(10, 92, 255, 0.7)",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-5",
+          {
+            duration: 0.2,
+            backgroundColor: "rgba(10, 92, 255, 0.6)",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-6",
+          {
+            duration: 0.2,
+            backgroundColor: "rgba(10, 92, 255, 0.5)",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-7",
+          {
+            duration: 0.2,
+            backgroundColor: "rgba(10, 92, 255, 0.4)",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-8",
+          {
+            duration: 0.2,
+            backgroundColor: "rgba(10, 92, 255, 0.3)",
+          },
+          "<0%"
+        )
+        .to(
+          ".speak-animation .mobile_wave-bar.is-9",
+          {
+            duration: 0.2,
+            backgroundColor: "rgba(10, 92, 255, 0.2)",
+          },
+          "<0%"
+        );
+
       const tl = gsap.timeline({ repeat: 10, yoyo: true });
       tl.to(".speak-animation .mobile_wave-bar.is-center", {
         duration: 0.2,
