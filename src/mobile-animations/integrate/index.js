@@ -12,9 +12,11 @@ export default function integrateAnimation() {
 
     orbitWraps.forEach((orbitWrap) => {
       let duration = 40;
+      let direction = 1;
 
       if (orbitWrap.classList.contains("is-center")) {
         duration = 20;
+        direction = -1;
       }
 
       const circle = orbitWrap.querySelector(".integrate_orbit-circle");
@@ -51,7 +53,7 @@ export default function integrateAnimation() {
               align: circle,
               alignOrigin: [0.5, 0.5],
               start: i / items.length,
-              end: i / items.length + 1,
+              end: i / items.length + direction,
               immediateRender: true,
             },
             duration: duration,
