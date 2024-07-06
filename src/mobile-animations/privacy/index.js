@@ -7,7 +7,7 @@ export default function privacyAnimation() {
     duration: 1.6,
   })
     .to(
-      ".privacy-svg-hide",
+      ".privacy-svg-hide, .privacy_img",
       {
         opacity: 0.1,
         duration: 1,
