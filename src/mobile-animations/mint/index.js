@@ -124,7 +124,6 @@ export default function mintAnimation() {
     .to(".mint_image-wrapper", {
       width: imgWidthInit,
       duration: 1,
-      ease: "power2.out",
     })
 
     .to(".mint_image", {
