@@ -344,7 +344,7 @@ export default function speakAnimation() {
       opacity: 1,
     })
     .to(".mobile_chat-wrap.is-speak", {
-      delay: 1,
+      delay: 2,
       opacity: 0,
     })
     .to(".speak-animation .mic_svg", {
