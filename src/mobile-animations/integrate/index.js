@@ -14,7 +14,7 @@ export default function integrateAnimation() {
       let duration = 40;
 
       if (orbitWrap.classList.contains("is-center")) {
-        duration = 30;
+        duration = 20;
       }
 
       const circle = orbitWrap.querySelector(".integrate_orbit-circle");
