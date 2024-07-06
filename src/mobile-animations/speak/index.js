@@ -313,7 +313,6 @@ export default function speakAnimation() {
     .to(".speak-animation .mobile_waves", {
       delay: 4,
       width: "0%",
-      height: "0.75rem",
     })
     .to(".speak_sound-wrap", {
       opacity: 0,
