@@ -309,19 +309,12 @@ export default function speakAnimation() {
           "<0%"
         );
     }, "<0%")
+
+    .to(".speak-animation .mobile_waves", { delay: 4, width: "0%" })
     .to(".speak_sound-wrap", {
-      delay: 4,
       opacity: 0,
       duration: 0.5,
     })
-    .to(
-      ".speak-animation .mobile_wave-bar",
-      {
-        height: "10%",
-      },
-      "<0%"
-    )
-    .to(".speak-animation .mobile_waves", { width: "0%" })
     .to(".speak-animation .mobile-chat_msg-wrap.is-reverse", {
       gridTemplateRows: "1fr",
       duration: 0,
