@@ -11,6 +11,12 @@ export default function integrateAnimation() {
     );
 
     orbitWraps.forEach((orbitWrap) => {
+      let duration = 40;
+
+      if (orbitWrap.classList.contains("is-center")) {
+        duration = 30;
+      }
+
       const circle = orbitWrap.querySelector(".integrate_orbit-circle");
       const items = orbitWrap.querySelectorAll(".integrate_orbit-img");
 
@@ -48,7 +54,7 @@ export default function integrateAnimation() {
               end: i / items.length + 1,
               immediateRender: true,
             },
-            duration: 40,
+            duration: duration,
             ease: "none",
           },
           0
