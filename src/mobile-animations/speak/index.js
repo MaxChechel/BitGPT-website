@@ -19,12 +19,10 @@ export default function speakAnimation() {
       const tl = gsap.timeline({
         repeat: 2,
         onComplete: () => {
-          const tl = gsap
-            .timeline()
-            .to(".speak-animation .mobile_wave-bar", {
-              height: "10%",
-            })
-            .to(".speak-animation .mobile_waves", { width: "0%" });
+          gsap.to(".speak-animation .mobile_wave-bar", {
+            height: "10%",
+          });
+          gsap.to(".speak-animation .mobile_waves", { width: "0%" });
 
           gsap.to(".speak-animation .mobile_wave-bar", { clearProps: "all" });
         },
