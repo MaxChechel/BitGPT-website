@@ -344,13 +344,17 @@ export default function speakAnimation() {
     .to(
       ".speak-animation .mobile-chat_chat-outer-wrap",
       {
-        opacity: 1,
         height: "auto",
-        duration: 0.8,
-        ease: "power4.out",
+        duration: 0,
       },
       "<30%"
     )
+    .to(".speak-animation .mobile-chat_chat-outer-wrap", {
+      delay: 0.2,
+      opacity: 1,
+      duration: 0.8,
+      ease: "power4.out",
+    })
     .to(".mobile-chat_message.is-img, .mobile-chat_message-img", {
       opacity: 1,
     })

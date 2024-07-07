@@ -29,12 +29,31 @@ export default function privacyAnimation() {
       yoyo: true,
       ease: "power2.inOut",
     })
-    .to(".privacy_indicator-item", {
-      opacity: 1,
-      duration: 0.5,
-      repeat: -1,
-      repeatDelay: 2,
-      yoyo: true,
-      ease: "circ.out",
+    .add(() => {
+      const tl = gsap
+        .timeline({ repeat: -1, repeatDelay: 1.5 })
+        .to(".privacy_indicator-item-3", {
+          opacity: 1,
+          duration: 0.5,
+          ease: "circ.out",
+        })
+        .to(".privacy_indicator-item-4", {
+          delay: 1,
+          opacity: 1,
+          duration: 0.5,
+          ease: "circ.out",
+        })
+        .to(".privacy_indicator-item-4", {
+          delay: 0.5,
+          opacity: 0.2,
+          duration: 0.5,
+          ease: "circ.out",
+        })
+        .to(".privacy_indicator-item-3", {
+          delay: 1,
+          opacity: 0.2,
+          duration: 0.5,
+          ease: "circ.out",
+        });
     });
 }
