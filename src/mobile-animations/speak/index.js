@@ -343,7 +343,8 @@ export default function speakAnimation() {
       duration: 0.6,
       ease: "linear",
     })
-    .to(".mobile_loader-content-wrap", { opacity: 0, height: 0 })
+    .to(".mobile_loader-content-wrap", { opacity: 0 })
+    .to(".mobile_loader-content-wrap", { height: 0, duration: 0 })
     .to(
       ".speak-animation .mobile-chat_chat-outer-wrap",
       {
