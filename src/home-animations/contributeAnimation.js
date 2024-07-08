@@ -6,6 +6,10 @@ import { DrawSVGPlugin } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, DrawSVGPlugin);
 
 export default function contributeAnimation() {
+  let scale = 0.65;
+  let mm = gsap.matchMedia();
+  mm.add("(max-width: 479px)", () => (scale = 0.85));
+
   const pathSvgs = document.querySelectorAll(
     ".contribute-a_pulses .line-pulse"
   );
@@ -52,7 +56,7 @@ export default function contributeAnimation() {
     .to(
       ".contribute-a_pulses-wrap",
       {
-        scale: 0.65,
+        scale: scale,
         duration: 4,
         ease: "power4.out",
       },
