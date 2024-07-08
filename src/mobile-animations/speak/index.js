@@ -322,6 +322,9 @@ export default function speakAnimation() {
     })
     .to(".speak-animation .mobile-chat_msg-wrap", {
       gridTemplateRows: "1fr",
+      duration: 0,
+    })
+    .to(".speak-animation .mobile-chat_msg-wrap", {
       delay: 0.2,
       opacity: 1,
     })
