@@ -147,8 +147,8 @@ export default function speakAnimation() {
         .to(
           ".speak-animation .mobile_wave-bar.is-2",
           {
-            duration: 0.15,
-            height: "68%",
+            duration: 0.1,
+            height: "58%",
             ease: "sine.inOut",
           },
           "<0%"
@@ -156,8 +156,8 @@ export default function speakAnimation() {
         .to(
           ".speak-animation .mobile_wave-bar.is-3",
           {
-            duration: 0.15,
-            height: "50%",
+            duration: 0.1,
+            height: "40%",
             ease: "sine.inOut",
           },
           "<0%"
@@ -166,7 +166,7 @@ export default function speakAnimation() {
           ".speak-animation .mobile_wave-bar.is-4",
           {
             duration: 0.1,
-            height: "38%",
+            height: "30%",
             ease: "sine.inOut",
           },
           "<0%"
@@ -175,13 +175,13 @@ export default function speakAnimation() {
           ".speak-animation .mobile_wave-bar.is-5",
           {
             duration: 0.1,
-            height: "28%",
+            height: "20%",
             ease: "sine.inOut",
           },
           "<0%"
         )
         .to(".speak-animation .mobile_wave-bar.is-center", {
-          duration: 0.15,
+          duration: 0.1,
           height: "65%",
           ease: "sine.inOut",
         })
@@ -192,7 +192,7 @@ export default function speakAnimation() {
             height: "58%",
             ease: "sine.inOut",
           },
-          "<0%"
+          "<5%"
         )
         .to(
           ".speak-animation .mobile_wave-bar.is-3",
