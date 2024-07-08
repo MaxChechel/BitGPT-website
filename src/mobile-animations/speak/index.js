@@ -138,9 +138,45 @@ export default function speakAnimation() {
           "<0%"
         );
 
-      const tl = gsap.timeline({ delay: 0.4, repeat: 10, yoyo: true });
+      const tl = gsap.timeline({
+        delay: 0.4,
+        repeat: 7,
+        yoyo: true,
+        onComplete: () => {
+          const tl = gsap
+            .timeline()
+            .to(".speak-animation .mobile_wave-bar", {
+              duration: 0.1,
+              height: "10%",
+              ease: "sine.inOut",
+            })
+            .to(".speak-animation .mobile_waves", {
+              width: "0%",
+            })
+            .to(".speak-animation .mobile_wave-bar.is-center", {
+              duration: 0,
+              height: "24%",
+            })
+            .to(".speak-animation .mobile_wave-bar.is-2", {
+              duration: 0,
+              height: "32%",
+            })
+            .to(".speak-animation .mobile_wave-bar.is-3", {
+              duration: 0,
+              height: "28%",
+            })
+            .to(".speak-animation .mobile_wave-bar.is-4", {
+              duration: 0,
+              height: "26%",
+            })
+            .to(".speak-animation .mobile_wave-bar.is-5", {
+              duration: 0,
+              height: "18%",
+            });
+        },
+      });
       tl.to(".speak-animation .mobile_wave-bar.is-center", {
-        duration: 0.2,
+        duration: 0.1,
         height: "100%",
         ease: "sine.inOut",
       })
@@ -192,7 +228,7 @@ export default function speakAnimation() {
             height: "58%",
             ease: "sine.inOut",
           },
-          "<5%"
+          "<0%"
         )
         .to(
           ".speak-animation .mobile_wave-bar.is-3",
@@ -206,7 +242,7 @@ export default function speakAnimation() {
         .to(
           ".speak-animation .mobile_wave-bar.is-4",
           {
-            duration: 0.15,
+            duration: 0.1,
             height: "28%",
             ease: "sine.inOut",
           },
@@ -215,7 +251,7 @@ export default function speakAnimation() {
         .to(
           ".speak-animation .mobile_wave-bar.is-5",
           {
-            duration: 0.15,
+            duration: 0.1,
             height: "20%",
             ease: "sine.inOut",
           },
@@ -247,7 +283,7 @@ export default function speakAnimation() {
         .to(
           ".speak-animation .mobile_wave-bar.is-4",
           {
-            duration: 0,
+            duration: 0.1,
             height: "26%",
             ease: "sine.inOut",
           },
@@ -288,7 +324,7 @@ export default function speakAnimation() {
         .to(
           ".speak-animation .mobile_wave-bar.is-4",
           {
-            duration: 0,
+            duration: 0.1,
             height: "26%",
             ease: "sine.inOut",
           },
@@ -304,12 +340,8 @@ export default function speakAnimation() {
           "<0%"
         );
     }, "<0%")
-
-    .to(".speak-animation .mobile_waves", {
-      delay: 4,
-      width: "0%",
-    })
     .to(".speak_sound-wrap", {
+      delay: 3.5,
       opacity: 0,
       duration: 0.5,
     })
