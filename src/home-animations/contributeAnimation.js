@@ -15,8 +15,8 @@ export default function contributeAnimation() {
   );
 
   pathSvgs.forEach((svg, i) => {
-    const timeToPlay = Math.floor(Math.random() * 4) + 2;
-    const timeDelay = Math.floor(Math.random() * 3) + 1;
+    const timeToPlay = gsap.utils.random(1.5, 3, 0.2);
+    const timeDelay = gsap.utils.random(0, 2, 0.2);
 
     const tween = gsap.timeline({
       delay: timeDelay,
