@@ -149,16 +149,55 @@ export default function tradeAnimation() {
           "<0%"
         );
 
-      const tl = gsap.timeline({ delay: 0.4, repeat: 10, yoyo: true });
+      const tl = gsap.timeline({
+        delay: 0.4,
+        repeat: 5,
+        yoyo: true,
+        onComplete: () => {
+          const tl = gsap
+            .timeline()
+            .to(".trade-animation .mobile_wave-bar", {
+              duration: 0.1,
+              height: "10%",
+              ease: "sine.inOut",
+            })
+            .to(".trade-animation .mobile_waves", {
+              width: "0%",
+            })
+            .to(".trade-animation .mobile_wave-bar.is-center", {
+              duration: 0,
+              height: "24%",
+            })
+            .to(".trade-animation .mobile_wave-bar.is-2", {
+              duration: 0,
+              height: "32%",
+            })
+            .to(".trade-animation .mobile_wave-bar.is-3", {
+              duration: 0,
+              height: "28%",
+            })
+            .to(".trade-animation .mobile_wave-bar.is-4", {
+              duration: 0,
+              height: "26%",
+            })
+            .to(".trade-animation .mobile_wave-bar.is-5", {
+              duration: 0,
+              height: "18%",
+            })
+            .to(".trade-animation .mobile_waves", {
+              opacity: "12%",
+            });
+        },
+      });
       tl.to(".trade-animation .mobile_wave-bar.is-center", {
-        duration: 0.2,
+        duration: 0.1,
         height: "100%",
         ease: "sine.inOut",
       })
         .to(
           ".trade-animation .mobile_wave-bar.is-2",
           {
-            duration: 0.15,
+            duration: 0.1,
             height: "68%",
             ease: "sine.inOut",
           },
@@ -167,7 +206,7 @@ export default function tradeAnimation() {
         .to(
           ".trade-animation .mobile_wave-bar.is-3",
           {
-            duration: 0.15,
+            duration: 0.1,
             height: "50%",
             ease: "sine.inOut",
           },
@@ -192,7 +231,7 @@ export default function tradeAnimation() {
           "<0%"
         )
         .to(".trade-animation .mobile_wave-bar.is-center", {
-          duration: 0.15,
+          duration: 0.1,
           height: "65%",
           ease: "sine.inOut",
         })
@@ -217,7 +256,7 @@ export default function tradeAnimation() {
         .to(
           ".trade-animation .mobile_wave-bar.is-4",
           {
-            duration: 0.15,
+            duration: 0.1,
             height: "28%",
             ease: "sine.inOut",
           },
@@ -226,7 +265,7 @@ export default function tradeAnimation() {
         .to(
           ".trade-animation .mobile_wave-bar.is-5",
           {
-            duration: 0.15,
+            duration: 0.1,
             height: "20%",
             ease: "sine.inOut",
           },
@@ -258,7 +297,7 @@ export default function tradeAnimation() {
         .to(
           ".trade-animation .mobile_wave-bar.is-4",
           {
-            duration: 0,
+            duration: 0.1,
             height: "26%",
             ease: "sine.inOut",
           },
@@ -299,7 +338,7 @@ export default function tradeAnimation() {
         .to(
           ".trade-animation .mobile_wave-bar.is-4",
           {
-            duration: 0,
+            duration: 0.1,
             height: "26%",
             ease: "sine.inOut",
           },
@@ -315,10 +354,6 @@ export default function tradeAnimation() {
           "<0%"
         );
     }, "<0%")
-    .to(".trade-animation .mobile_waves", {
-      width: "0%",
-      opacity: "12%",
-    })
     .to(".trade_popup-inner-wrap", {
       opacity: 0,
       duration: 1,
