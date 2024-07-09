@@ -8,6 +8,14 @@ export default function privacyAnimation() {
     duration: 1.6,
   })
     .to(
+      ".privacy_wrapper",
+      {
+        marginLeft: 0,
+        duration: 1.6,
+      },
+      "<0%"
+    )
+    .to(
       ".privacy-svg-hide, .privacy_img",
       {
         opacity: 0.1,
