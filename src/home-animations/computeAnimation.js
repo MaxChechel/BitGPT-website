@@ -13,16 +13,16 @@ export default function computeAnimation() {
     return symbols[Math.floor(Math.random() * symbols.length)];
   }
 
-  // numbers.forEach((num) => {
-  //     const tl = gsap.timeline(); // Create a timeline for each number
-  //     tl.to(num, {
-  //         duration: 0.05,
-  //         repeat: -1,
-  //         onRepeat: function () {
-  //             num.textContent = getRandomSymbol();
-  //         },
-  //     });
-  // });
+  numbers.forEach((num) => {
+    const tl = gsap.timeline(); // Create a timeline for each number
+    tl.to(num, {
+      duration: 0.05,
+      repeat: -1,
+      onRepeat: function () {
+        num.textContent = getRandomSymbol();
+      },
+    });
+  });
 
   pathSvgs.forEach((svg, i) => {
     const path = svg.querySelector(".compute-path");
