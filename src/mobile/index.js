@@ -12,9 +12,36 @@ import tradeAnimation from "../mobile-animations/trade";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 //  Circuit animation for hero section
-circuitBoardAnimation(".section-hero-bg_img .circuit-lines-group path");
+const heroCircuitTimeline = circuitBoardAnimation(
+  ".section-hero-bg_img .circuit-lines-group path"
+);
+
+ScrollTrigger.create({
+  trigger: ".section_hero",
+  start: "top 10%",
+  end: "bottom 50%",
+  invalidateOnRefresh: true,
+  onEnter: () => heroCircuitTimeline.play(),
+  onLeave: () => heroCircuitTimeline.pause(),
+  onEnterBack: () => heroCircuitTimeline.play(),
+  onLeaveBack: () => heroCircuitTimeline.pause(),
+});
+
 //  Circuit animation for CTA section
-circuitBoardAnimation(".section-cta-bg_img .circuit-lines-group path");
+const ctaCircuitTimeline = circuitBoardAnimation(
+  ".section-cta-bg_img .circuit-lines-group path"
+);
+
+ScrollTrigger.create({
+  trigger: ".section.is-features",
+  start: "bottom 100%",
+  end: "bottom 0%",
+  invalidateOnRefresh: true,
+  onEnter: () => ctaCircuitTimeline.play(),
+  onLeave: () => ctaCircuitTimeline.pause(),
+  onEnterBack: () => ctaCircuitTimeline.play(),
+  onLeaveBack: () => ctaCircuitTimeline.pause(),
+});
 
 //////Hero loader
 document.fonts
