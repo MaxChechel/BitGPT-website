@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { DrawSVGPlugin } from "gsap/all";
-
+import TextPlugin from "gsap/TextPlugin";
 import circuitBoardAnimation from "../home-animations/circuitBoardAnimation";
 import chatAnimation from "../home-animations/chatAnimation";
 import agentAnimation from "../home-animations/agentAnimation";
@@ -12,12 +12,40 @@ import computeAnimation from "../home-animations/computeAnimation";
 import contributeAnimation from "../home-animations/contributeAnimation";
 import vectorStorageAnimation from "../home-animations/vectorStorageAnimations";
 import evaluateAnimation from "../home-animations/evaluateAnimation";
-gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
+gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, TextPlugin);
 
 //  Circuit animation for hero section
-circuitBoardAnimation(".section-hero-bg_img .circuit-lines-group path");
+
+const heroCircuitTimeline = circuitBoardAnimation(
+  ".section-hero-bg_img .circuit-lines-group path"
+);
+
+ScrollTrigger.create({
+  trigger: ".section_hero",
+  start: "top 10%",
+  end: "bottom 50%",
+  invalidateOnRefresh: true,
+  onEnter: () => heroCircuitTimeline.play(),
+  onLeave: () => heroCircuitTimeline.pause(),
+  onEnterBack: () => heroCircuitTimeline.play(),
+  onLeaveBack: () => heroCircuitTimeline.pause(),
+});
 //  Circuit animation for CTA section
-circuitBoardAnimation(".section-cta-bg_img .circuit-lines-group path");
+//circuitBoardAnimation(".section-cta-bg_img .circuit-lines-group path");
+const ctaCircuitTimeline = circuitBoardAnimation(
+  ".section-cta-bg_img .circuit-lines-group path"
+);
+
+ScrollTrigger.create({
+  trigger: ".section_pooled-knowledge",
+  start: "bottom 100%",
+  end: "bottom 0%",
+  invalidateOnRefresh: true,
+  onEnter: () => ctaCircuitTimeline.play(),
+  onLeave: () => ctaCircuitTimeline.pause(),
+  onEnterBack: () => ctaCircuitTimeline.play(),
+  onLeaveBack: () => ctaCircuitTimeline.pause(),
+});
 //////Hero loader
 document.fonts
   .load('1em "Plus Jakarta Sans"')
