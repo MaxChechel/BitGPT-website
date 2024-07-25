@@ -27,7 +27,7 @@ ScrollTrigger.create({
   onLeaveBack: () => heroCircuitTimeline.pause(),
 });
 
-//  Circuit animation for CTA section
+//Circuit animation for CTA section
 const ctaCircuitTimeline = circuitBoardAnimation(
   ".section-cta-bg_img .circuit-lines-group path"
 );
