@@ -1,6 +1,8 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import agentAnimation from "../home-animations/agentAnimation";
+import fraudAnimation from "../home-animations/fraudAnimation";
 import swapAnimation from "../mobile-animations/swap";
 import integrateAnimation from "../mobile-animations/integrate";
 import mintAnimation from "../mobile-animations/mint";
@@ -26,7 +28,7 @@ ScrollTrigger.create({
   onEnterBack: () => heroCircuitTimeline.play(),
   onLeaveBack: () => heroCircuitTimeline.pause(),
 });
-
+//
 //Circuit animation for CTA section
 const ctaCircuitTimeline = circuitBoardAnimation(
   ".section-cta-bg_img .circuit-lines-group path"
@@ -184,6 +186,33 @@ document.fonts
 swapAnimation();
 integrateAnimation();
 
+//////AGENT////////
+const mainAgentTl = agentAnimation();
+ScrollTrigger.create({
+  trigger: "[data-agent-animation]",
+  start: "top 50%",
+  end: "bottom 50%",
+  invalidateOnRefresh: true,
+  onEnter: () => mainAgentTl.play(),
+  onLeave: () => mainAgentTl.pause(),
+  onEnterBack: () => mainAgentTl.play(),
+  onLeaveBack: () => mainAgentTl.pause(),
+});
+//////////////////
+
+////FRAUD////////
+const mainFraudTl = fraudAnimation();
+ScrollTrigger.create({
+  trigger: "[data-fraud-animation]",
+  start: "top 50%",
+  end: "bottom 50%",
+  invalidateOnRefresh: true,
+  onEnter: () => mainFraudTl.play(),
+  onLeave: () => mainFraudTl.pause(),
+  onEnterBack: () => mainFraudTl.play(),
+  onLeaveBack: () => mainFraudTl.pause(),
+});
+///////////////
 const mainAtomateTl = automateAnimation();
 ScrollTrigger.create({
   trigger: "[data-automate-animation]",

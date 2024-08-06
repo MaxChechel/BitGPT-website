@@ -4,10 +4,8 @@ import { DrawSVGPlugin } from "gsap/all";
 import TextPlugin from "gsap/TextPlugin";
 import circuitBoardAnimation from "../home-animations/circuitBoardAnimation";
 import chatAnimation from "../home-animations/chatAnimation";
-import agentAnimation from "../home-animations/agentAnimation";
 import llmAnimation from "../home-animations/llmAnimation";
 import pulseAnimation from "../home-animations/pulseAnimation";
-import fraudAnimation from "../home-animations/fraudAnimation";
 import computeAnimation from "../home-animations/computeAnimation";
 import contributeAnimation from "../home-animations/contributeAnimation";
 import vectorStorageAnimation from "../home-animations/vectorStorageAnimations";
@@ -36,7 +34,7 @@ const ctaCircuitTimeline = circuitBoardAnimation(
 );
 
 ScrollTrigger.create({
-  trigger: ".section_pooled-knowledge",
+  trigger: ".padding-section-pre-footer",
   start: "bottom 100%",
   end: "bottom 0%",
   invalidateOnRefresh: true,
@@ -384,20 +382,6 @@ ScrollTrigger.create({
 
 //////////////
 
-//////AGENT////////
-const mainAgentTl = agentAnimation();
-ScrollTrigger.create({
-  trigger: "[data-agent-animation]",
-  start: "top 50%",
-  end: "bottom 50%",
-  invalidateOnRefresh: true,
-  onEnter: () => mainAgentTl.play(),
-  onLeave: () => mainAgentTl.pause(),
-  onEnterBack: () => mainAgentTl.play(),
-  onLeaveBack: () => mainAgentTl.pause(),
-});
-//////////////////
-
 ///////LLM/////////
 ScrollTrigger.create({
   trigger: "[data-llm-animation]",
@@ -413,7 +397,7 @@ ScrollTrigger.create({
 const { letterAnimations, tl } = pulseAnimation();
 
 ScrollTrigger.create({
-  trigger: ".pulse_letters-wrap",
+  trigger: "[data-privacy-animation]",
   start: "top 50%",
   end: "bottom 50%",
   onEnter: () => {
@@ -432,17 +416,4 @@ ScrollTrigger.create({
     letterAnimations.forEach((animation) => animation.pause());
     tl.pause();
   },
-});
-
-////Fraud
-const mainFraudTl = fraudAnimation();
-ScrollTrigger.create({
-  trigger: "[data-security-animation]",
-  start: "top 50%",
-  end: "bottom 50%",
-  invalidateOnRefresh: true,
-  onEnter: () => mainFraudTl.play(),
-  onLeave: () => mainFraudTl.pause(),
-  onEnterBack: () => mainFraudTl.play(),
-  onLeaveBack: () => mainFraudTl.pause(),
 });
