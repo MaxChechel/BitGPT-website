@@ -397,8 +397,8 @@ const { letterAnimations, tl } = pulseAnimation();
 
 ScrollTrigger.create({
   trigger: "[data-privacy-animation]",
-  start: "top 70%",
-  end: "bottom 30%",
+  start: "top 50%",
+  end: "bottom 50%",
   onEnter: () => {
     letterAnimations.forEach((animation) => animation.play());
     tl.play();
