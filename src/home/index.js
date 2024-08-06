@@ -236,24 +236,6 @@ document.fonts
       });
     });
 
-    //Card row
-    ScrollTrigger.create({
-      trigger: ".card-row_component",
-      start: "top 60%",
-      end: "top 50%",
-      invalidateOnRefresh: true,
-      onEnter: () => {
-        const tl = gsap.timeline();
-        tl.to(".card-row_card:not(.is-wide)", {
-          y: "0%",
-          opacity: 1,
-          duration: 0.8,
-          ease: "circ.out",
-          stagger: { each: 0.05 },
-        });
-      },
-    });
-
     ////Pre footer cta
     ScrollTrigger.create({
       trigger: ".cta_card",
