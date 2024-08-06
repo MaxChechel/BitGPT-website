@@ -192,7 +192,6 @@ document.fonts
     });
 
     //Feature sections
-
     const sectionFeature = document.querySelectorAll(".feature_component");
     sectionFeature.forEach((section) => {
       const heading = section.querySelector("h3");
