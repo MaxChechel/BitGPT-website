@@ -29,7 +29,7 @@ export default function tradeAnimation() {
       ".trade-animation .trade_speach-text",
       {
         text: {
-          value: "Yo, buy 0.4 BTC using USDC",
+          value: "Hey, buy 0.4 BTC using USDC",
         },
         duration: 3,
       },
