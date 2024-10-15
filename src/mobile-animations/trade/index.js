@@ -380,6 +380,39 @@ export default function tradeAnimation() {
       opacity: 1,
       marginTop: "1rem",
     })
+    .to(
+      ".trade-animation  .mobile-chat_chat-confirm-wrap",
+      {
+        opacity: 1,
+        height: "auto",
+      },
+      "<0%"
+    )
+    .to(".trade-animation .chat-confirm-btn.is-primary", {
+      delay: 2,
+      scale: 0.98,
+      duration: 0.25,
+    })
+    .to(".trade-animation .chat-confirm-btn.is-primary", {
+      scale: 1,
+      duration: 0.1,
+    })
+    .to(".trade-animation  .mobile-chat_chat-confirm-wrap", {
+      opacity: 0,
+      height: 0,
+      duration: 0.6,
+    })
+    .to(
+      ".trade-animation  .overflow-hidden.is-height-0",
+      {
+        height: "auto",
+        duration: 0.6,
+      },
+      "<0%"
+    )
+    .to(".trade-animation  .mobile-chat_loading-text-wrap", {
+      opacity: 1,
+    })
     .to(".trade-animation  .mobile_loading-text", {
       backgroundPositionX: "100%",
       duration: 1,

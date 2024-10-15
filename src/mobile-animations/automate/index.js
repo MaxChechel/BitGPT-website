@@ -2,7 +2,11 @@ import gsap from "gsap";
 import TextPlugin from "gsap/TextPlugin";
 export default function automateAnimation() {
   gsap.registerPlugin(TextPlugin);
-  const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, paused: true });
+  const tl = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 1,
+    paused: true,
+  });
 
   tl.to(".automate-animation .mobile-chat_msg-wrap.is-reverse", {
     opacity: 1,
@@ -15,7 +19,7 @@ export default function automateAnimation() {
     })
     .add(() => {
       const tl = gsap
-        .timeline({ repeat: 5, yoyo: true })
+        .timeline({ repeat: 3, yoyo: true })
         .to(".automate-animation .mobile-chat_msg-wrap .mobile_loading-text", {
           backgroundPositionX: "100%",
           duration: 1,
@@ -32,10 +36,60 @@ export default function automateAnimation() {
           ease: "linear",
         });
     })
+    .to(".automate-animation .mobile-chat_chat-confirm-wrap", {
+      delay: 2,
+      opacity: 1,
+      height: "auto",
+    })
+    .to(
+      ".automate-animation .mobile_loading-text",
+      {
+        opacity: 0,
+        height: 0,
+      },
+      "<0%"
+    )
+    .to(".automate-animation .chat-confirm-btn.is-primary", {
+      delay: 2,
+      scale: 0.98,
+      duration: 0.25,
+    })
+    .to(".automate-animation .chat-confirm-btn.is-primary", {
+      scale: 1,
+      duration: 0.1,
+    })
+    .to(".automate-animation .mobile-chat_chat-confirm-wrap", {
+      delay: 0.2,
+      opacity: 0,
+      height: 0,
+    })
     .to(".automate-animation .mobile-chat_msg-wrap .mobile_loading-text", {
-      delay: 1.5,
+      duration: 0,
       text: { value: "Confirming transaction...", speed: 0 },
     })
+    .to(
+      ".automate-animation .mobile_loading-text",
+      {
+        duration: 0,
+        height: "auto",
+      },
+      "<0%"
+    )
+    .to(
+      ".automate-animation .mobile_loading-text",
+      {
+        opacity: 1,
+      },
+      "<0%"
+    )
+    .to(
+      ".automate-animation .mobile-chat_msg-wrap .mobile_loading-text",
+      {
+        duration: 0,
+        text: { value: "Swap complete! Initializing staking..", speed: 0 },
+      },
+      "<0%"
+    )
     .to(".automate-animation .mobile-chat_msg-wrap .mobile_loading-text", {
       delay: 1.5,
       text: { value: "Swap complete! Initializing staking..", speed: 0 },
