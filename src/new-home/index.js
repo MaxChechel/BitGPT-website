@@ -8,7 +8,8 @@ import swapAnimation from "../mobile-animations/swap";
 import integrateAnimation from "../mobile-animations/integrate";
 
 import privacyAnimation from "../mobile-animations/privacy";
-import automateAnimation from "../mobile-animations/automate";
+//import automateAnimation from "../mobile-animations/automate";
+import automateAnimation from "../mobile-animations/automate-new";
 import speakAnimation from "../mobile-animations/speak";
 import circuitBoardAnimation from "../home-animations/circuitBoardAnimation";
 import tradeAnimation from "../mobile-animations/trade";
