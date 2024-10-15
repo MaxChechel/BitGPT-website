@@ -403,18 +403,20 @@ export default function tradeAnimation() {
       duration: 0.6,
     })
     .to(
-      ".trade-animation  .mobile-chat_loading-text-wrap",
+      ".trade-animation  .overflow-hidden.is-height-0",
       {
-        duration: 0,
         height: "auto",
-        marginTop: "0.6rem",
+        duration: 0.6,
       },
       "<0%"
     )
-    .to(".trade-animation  .mobile-chat_loading-text-wrap", {
-      duration: 0.6,
-      opacity: 1,
-    })
+    .to(
+      ".trade-animation  .mobile-chat_loading-text-wrap",
+      {
+        opacity: 1,
+      },
+      "<0%"
+    )
     .to(".trade-animation  .mobile_loading-text", {
       backgroundPositionX: "100%",
       duration: 1,
