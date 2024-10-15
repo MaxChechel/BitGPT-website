@@ -185,7 +185,7 @@ export default function agentAnimation() {
       "<0%"
     )
     .to("[data-agent]", {
-      delay: 1,
+      delay: 1.5,
       opacity: 0,
     })
     .to("[data-agent]", {
@@ -326,7 +326,7 @@ export default function agentAnimation() {
       duration: 0.2,
       stagger: { each: 0.05 },
     });
-  const bubblesTl2 = gsap.timeline({ repeat: 2 });
+  const bubblesTl2 = gsap.timeline({ repeat: 0 });
   bubblesTl2
     .to("[data-agent='4'] .chat-bubbles", {
       yPercent: -40,

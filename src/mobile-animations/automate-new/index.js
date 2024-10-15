@@ -50,7 +50,7 @@ export default function automateAnimation() {
       "<0%"
     )
     .to(".automate-animation .chat-confirm-btn.is-primary", {
-      delay: 1,
+      delay: 2,
       scale: 0.98,
       duration: 0.25,
     })

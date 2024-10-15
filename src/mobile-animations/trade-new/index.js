@@ -389,7 +389,7 @@ export default function tradeAnimation() {
       "<0%"
     )
     .to(".trade-animation .chat-confirm-btn.is-primary", {
-      delay: 1,
+      delay: 2,
       scale: 0.98,
       duration: 0.25,
     })
@@ -410,13 +410,9 @@ export default function tradeAnimation() {
       },
       "<0%"
     )
-    .to(
-      ".trade-animation  .mobile-chat_loading-text-wrap",
-      {
-        opacity: 1,
-      },
-      "<0%"
-    )
+    .to(".trade-animation  .mobile-chat_loading-text-wrap", {
+      opacity: 1,
+    })
     .to(".trade-animation  .mobile_loading-text", {
       backgroundPositionX: "100%",
       duration: 1,
