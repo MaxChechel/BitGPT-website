@@ -1,6 +1,8 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import SplitType from "split-type";
+
 import chatAnimation from "../home-animations/chatAnimation";
 import agentAnimation from "../home-animations/agentAnimation";
 
@@ -49,8 +51,7 @@ ScrollTrigger.create({
 });
 
 //////Hero loader
-document.fonts
-  .load('1em "Plus Jakarta Sans"')
+document.fonts.ready
   .then(function () {
     const heroTl = gsap.timeline();
 
@@ -104,6 +105,24 @@ document.fonts
         },
         "<0%"
       );
+
+    const introParagraph = new SplitType(".home-intro_text");
+    gsap.set(".home-intro_text", { opacity: 1 });
+    const fadedHeadingTl = gsap.timeline();
+    fadedHeadingTl.to(".home-intro_text .char", {
+      opacity: 1,
+      duration: 1.5,
+      stagger: { each: 0.05 },
+    });
+
+    ScrollTrigger.create({
+      trigger: ".section_home-intro",
+      start: "top 60%",
+      end: "top 10%",
+      animation: fadedHeadingTl,
+      scrub: 1.15,
+      pinSpacer: false,
+    });
 
     //Section headers
     const sectionHeaders = document.querySelectorAll(

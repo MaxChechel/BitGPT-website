@@ -42,8 +42,7 @@ ScrollTrigger.create({
   onLeaveBack: () => ctaCircuitTimeline.pause(),
 });
 //////Hero loader
-document.fonts
-  .load('1em "Plus Jakarta Sans"')
+document.fonts.ready
   .then(function () {
     const heroTl = gsap.timeline();
 
