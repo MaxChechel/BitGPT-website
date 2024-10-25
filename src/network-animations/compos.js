@@ -14,8 +14,6 @@ export default function composAnimation() {
 
   pathSvgs.forEach((svg, i) => {
     const tween = gsap.timeline({
-      delay: 0.5,
-      duration: 2,
       repeat: -1,
       repeatDelay: 0,
     });
@@ -26,10 +24,11 @@ export default function composAnimation() {
         {
           ease: "none",
           drawSVG: 0,
+          duration: 2,
         },
         { drawSVG: "0% 50%", ease: "sine.in" }
       )
-      .to(svg, { drawSVG: "100% 100%" });
+      .to(svg, { drawSVG: "100% 100%", duration: 1 });
     tween.play();
   });
 }

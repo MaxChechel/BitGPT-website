@@ -15,7 +15,7 @@ export default function interAnimation() {
   pathSvgs.forEach((svg, i) => {
     const tween = gsap.timeline({
       delay: 0,
-      duration: 5,
+      //duration: 5,
       repeat: -1,
       repeatDelay: 0,
     });
@@ -26,10 +26,11 @@ export default function interAnimation() {
         {
           ease: "none",
           drawSVG: "100% 100%", // Start from the end
+          duration: 2,
         },
         { drawSVG: "50% 100%", ease: "sine.in" } // Animate backward
       )
-      .to(svg, { drawSVG: "0% 0%" }); // Finish at the beginning
+      .to(svg, { drawSVG: "0% 0%", duration: 1 }); // Finish at the beginning
     tween.play();
   });
 }
