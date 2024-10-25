@@ -41,24 +41,6 @@ document.fonts.ready.then(function () {
         stagger: { each: 0.035 },
       },
       "<15%"
-    )
-    .to(
-      ".scroll-indicator",
-      {
-        duration: 1.2,
-        ease: "power2.out",
-        opacity: 1,
-      },
-      "<75%"
-    )
-    .to(
-      ".section-bg_overlay",
-      {
-        ease: "circ.out",
-        width: "0%",
-        duration: 1.6,
-      },
-      0.3
     );
 });
 
