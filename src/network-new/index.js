@@ -87,16 +87,17 @@ anchors.forEach((anchor, i) => {
 const ctaCircuitTimeline = circuitBoardAnimation(
   ".section-cta-bg_img .circuit-lines-group path"
 );
-ScrollTrigger.create({
-  trigger: ".section_network-features",
-  start: "bottom 100%",
-  end: "bottom 0%",
-  invalidateOnRefresh: true,
-  onEnter: () => ctaCircuitTimeline.play(),
-  onLeave: () => ctaCircuitTimeline.pause(),
-  onEnterBack: () => ctaCircuitTimeline.play(),
-  onLeaveBack: () => ctaCircuitTimeline.pause(),
-});
+ctaCircuitTimeline.play();
+// ScrollTrigger.create({
+//   trigger: ".section_network-features",
+//   start: "bottom 100%",
+//   end: "bottom 0%",
+//   invalidateOnRefresh: true,
+//   onEnter: () => ctaCircuitTimeline.play(),
+//   onLeave: () => ctaCircuitTimeline.pause(),
+//   onEnterBack: () => ctaCircuitTimeline.play(),
+//   onLeaveBack: () => ctaCircuitTimeline.pause(),
+// });
 ScrollTrigger.create({
   trigger: ".cta_card",
   start: "top 60%",
