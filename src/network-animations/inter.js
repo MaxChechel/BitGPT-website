@@ -14,8 +14,8 @@ export default function interAnimation() {
 
   pathSvgs.forEach((svg, i) => {
     const tween = gsap.timeline({
-      delay: 0.5,
-      duration: 2,
+      delay: 0,
+      duration: 3,
       repeat: -1,
       repeatDelay: 0,
     });
