@@ -400,13 +400,22 @@ ScrollTrigger.create({
       delay: 1,
       scale: 1.5,
       duration: 1.6,
-    }).to(
-      ".privacy_wrapper",
-      {
-        marginLeft: 0,
-        duration: 1.6,
-      },
-      "<0%"
-    );
+    })
+      .to(
+        ".privacy_wrapper",
+        {
+          marginLeft: 0,
+          duration: 1.6,
+        },
+        "<0%"
+      )
+      .to(
+        ".privacy_wrapper .mobile-chat_user-message-wrap, .privacy_wrapper .confirm-text, .privacy_wrapper .mobile-chat_avatar, .privacy_wrapper .chat-confirm-btn:not(.is-primary)",
+        {
+          opacity: 0.1,
+          duration: 1,
+        },
+        "<0%"
+      );
   },
 });
