@@ -404,7 +404,6 @@ ScrollTrigger.create({
       ".privacy_wrapper",
       {
         marginLeft: 0,
-        paddingBottom: 0,
         duration: 1.6,
       },
       "<0%"
