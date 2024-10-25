@@ -37,17 +37,17 @@ ScrollTrigger.create({
 const ctaCircuitTimeline = circuitBoardAnimation(
   ".section-cta-bg_img .circuit-lines-group path"
 );
-
-ScrollTrigger.create({
-  trigger: ".section.is-features",
-  start: "bottom 100%",
-  end: "bottom 0%",
-  invalidateOnRefresh: true,
-  onEnter: () => ctaCircuitTimeline.play(),
-  onLeave: () => ctaCircuitTimeline.pause(),
-  onEnterBack: () => ctaCircuitTimeline.play(),
-  onLeaveBack: () => ctaCircuitTimeline.pause(),
-});
+ctaCircuitTimeline.play();
+// ScrollTrigger.create({
+//   trigger: ".section.is-features",
+//   start: "bottom 100%",
+//   end: "bottom 0%",
+//   invalidateOnRefresh: true,
+//   onEnter: () => ctaCircuitTimeline.play(),
+//   onLeave: () => ctaCircuitTimeline.pause(),
+//   onEnterBack: () => ctaCircuitTimeline.play(),
+//   onLeaveBack: () => ctaCircuitTimeline.pause(),
+// });
 
 //////Hero loader
 document.fonts.ready
