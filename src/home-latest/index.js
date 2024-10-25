@@ -395,10 +395,19 @@ ScrollTrigger.create({
   end: "bottom 50%",
   invalidateOnRefresh: true,
   onEnter: () => {
-    gsap.to(".privacy_wrapper", {
+    const tl = gsap.timeline();
+    tl.to(".privacy_wrapper", {
       delay: 1,
       scale: 1.5,
       duration: 1.6,
-    });
+    }).to(
+      ".privacy_wrapper",
+      {
+        marginLeft: 0,
+        paddingBottom: 0,
+        duration: 1.6,
+      },
+      "<0%"
+    );
   },
 });
