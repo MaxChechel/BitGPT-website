@@ -1,7 +1,7 @@
-import gsap from "gsap";
+/*import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import SplitType from "split-type";
+import SplitType from "split-type";*/
 
 import chatAnimation from "../home-animations/chatAnimation";
 import agentAnimation from "../home-animations/agentAnimation";
