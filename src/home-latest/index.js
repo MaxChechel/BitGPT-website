@@ -105,11 +105,11 @@ document.fonts.ready
         "<0%"
       );
 
-    const introParagraph = new SplitType(".home-intro_text"), {
-      types: 'words, chars',
+    let introParagraph = new SplitType('.home-intro_text', {
+      types: 'words, chars', 
       tagName: 'span',
-      absolute: false
-    };
+      absolute: false 
+    })
     gsap.set(".home-intro_text", { opacity: 1 });
     const fadedHeadingTl = gsap.timeline();
     fadedHeadingTl.to(".home-intro_text .char", {
