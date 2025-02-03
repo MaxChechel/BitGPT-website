@@ -105,7 +105,7 @@ document.fonts.ready
         "<0%"
       );
 
-    let introParagraph = new SplitType('.home-intro_text', {
+    /*let introParagraph = new SplitType('.home-intro_text', {
       types: 'words, chars', 
       tagName: 'span',
       absolute: false 
@@ -125,7 +125,7 @@ document.fonts.ready
       animation: fadedHeadingTl,
       scrub: 1.15,
       pinSpacer: false,
-    });
+    });*/
 
     //Section headers
     const sectionHeaders = document.querySelectorAll(
