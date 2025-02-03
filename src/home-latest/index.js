@@ -105,7 +105,11 @@ document.fonts.ready
         "<0%"
       );
 
-    const introParagraph = new SplitType(".home-intro_text");
+    /*let introParagraph = new SplitType('.home-intro_text', {
+      types: 'words, chars', 
+      tagName: 'span',
+      absolute: false 
+    })
     gsap.set(".home-intro_text", { opacity: 1 });
     const fadedHeadingTl = gsap.timeline();
     fadedHeadingTl.to(".home-intro_text .char", {
@@ -121,7 +125,28 @@ document.fonts.ready
       animation: fadedHeadingTl,
       scrub: 1.15,
       pinSpacer: false,
+    });*/
+
+    let typeSplit = new SplitType('[data-home-intro-text]', {
+      types: 'words, chars', // On ajoute 'words' pour préserver l'intégrité des mots
+      tagName: 'span',
+      absolute: false // Pour empêcher le positionnement absolu qui peut causer des coupures
+    })
+
+    let homeIntroTl = gsap.timeline();
+    homeIntroTl.to('[data-home-intro-text] .char', {
+        scrollTrigger: {
+            trigger: ".section_home-intro",
+            start: "top 60%",
+            end: "top 10%",
+            scrub: 1.15,
+            markers: false
+        },
+        opacity: 1,
+        duration: 1.5,
+        stagger: { each: 0.05 }
     });
+
 
     //Section headers
     const sectionHeaders = document.querySelectorAll(
