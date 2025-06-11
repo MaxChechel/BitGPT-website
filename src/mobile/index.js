@@ -233,31 +233,31 @@ swapAnimation();
 integrateAnimation();
 
 //////AGENT////////
-const mainAgentTl = agentAnimation();
-ScrollTrigger.create({
-  trigger: "[data-agent-animation]",
-  start: "top 50%",
-  end: "bottom 50%",
-  invalidateOnRefresh: true,
-  onEnter: () => mainAgentTl.play(),
-  onLeave: () => mainAgentTl.pause(),
-  onEnterBack: () => mainAgentTl.play(),
-  onLeaveBack: () => mainAgentTl.pause(),
-});
+// const mainAgentTl = agentAnimation();
+// ScrollTrigger.create({
+//   trigger: "[data-agent-animation]",
+//   start: "top 50%",
+//   end: "bottom 50%",
+//   invalidateOnRefresh: true,
+//   onEnter: () => mainAgentTl.play(),
+//   onLeave: () => mainAgentTl.pause(),
+//   onEnterBack: () => mainAgentTl.play(),
+//   onLeaveBack: () => mainAgentTl.pause(),
+// });
 //////////////////
 
 ////FRAUD////////
-const mainFraudTl = fraudAnimation();
-ScrollTrigger.create({
-  trigger: "[data-fraud-animation]",
-  start: "top 50%",
-  end: "bottom 50%",
-  invalidateOnRefresh: true,
-  onEnter: () => mainFraudTl.play(),
-  onLeave: () => mainFraudTl.pause(),
-  onEnterBack: () => mainFraudTl.play(),
-  onLeaveBack: () => mainFraudTl.pause(),
-});
+// const mainFraudTl = fraudAnimation();
+// ScrollTrigger.create({
+//   trigger: "[data-fraud-animation]",
+//   start: "top 50%",
+//   end: "bottom 50%",
+//   invalidateOnRefresh: true,
+//   onEnter: () => mainFraudTl.play(),
+//   onLeave: () => mainFraudTl.pause(),
+//   onEnterBack: () => mainFraudTl.play(),
+//   onLeaveBack: () => mainFraudTl.pause(),
+// });
 ///////////////
 const mainAtomateTl = automateAnimation();
 ScrollTrigger.create({
