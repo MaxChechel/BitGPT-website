@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/all";
 import { DrawSVGPlugin } from "gsap/all";
 import TextPlugin from "gsap/TextPlugin";
 import circuitBoardAnimation from "../home-animations/circuitBoardAnimation";
+import agentAnimation from "../home-animations/agentAnimation";
 import chatAnimation from "../home-animations/chatAnimation";
 import llmAnimation from "../home-animations/llmAnimation";
 import pulseAnimation from "../home-animations/pulseAnimation";
@@ -363,6 +364,19 @@ ScrollTrigger.create({
 
 //////////////
 
+////Agent///////
+const mainAgentTl = agentAnimation();
+ScrollTrigger.create({
+  trigger: "[data-agent-animation]",
+  start: "top 50%",
+  end: "bottom 60%",
+  invalidateOnRefresh: true,
+  onEnter: () => mainAgentTl.play(),
+  onLeave: () => mainAgentTl.pause(),
+  onEnterBack: () => mainAgentTl.play(),
+  onLeaveBack: () => mainAgentTl.pause(),
+});
+
 ///////LLM/////////
 ScrollTrigger.create({
   trigger: "[data-llm-animation]",
@@ -377,24 +391,24 @@ ScrollTrigger.create({
 ////Enhanced Privacy
 const { letterAnimations, tl } = pulseAnimation();
 
-ScrollTrigger.create({
-  trigger: "[data-privacy-animation]",
-  start: "top 50%",
-  end: "bottom 50%",
-  onEnter: () => {
-    letterAnimations.forEach((animation) => animation.play());
-    tl.play();
-  },
-  onLeave: () => {
-    letterAnimations.forEach((animation) => animation.pause());
-    tl.pause();
-  },
-  onEnterBack: () => {
-    letterAnimations.forEach((animation) => animation.play());
-    tl.play();
-  },
-  onLeaveBack: () => {
-    letterAnimations.forEach((animation) => animation.pause());
-    tl.pause();
-  },
-});
+// ScrollTrigger.create({
+//   trigger: "[data-privacy-animation]",
+//   start: "top 50%",
+//   end: "bottom 50%",
+//   onEnter: () => {
+//     letterAnimations.forEach((animation) => animation.play());
+//     tl.play();
+//   },
+//   onLeave: () => {
+//     letterAnimations.forEach((animation) => animation.pause());
+//     tl.pause();
+//   },
+//   onEnterBack: () => {
+//     letterAnimations.forEach((animation) => animation.play());
+//     tl.play();
+//   },
+//   onLeaveBack: () => {
+//     letterAnimations.forEach((animation) => animation.pause());
+//     tl.pause();
+//   },
+// });
